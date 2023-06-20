@@ -1,0 +1,28 @@
+.energy-chart2 {
+   
+    position:absolute;
+    top: 59%;
+    right: 100%;
+    transform: translate(50%, -50%);
+    width: 5rem;
+    height: 3rem;
+    background-color: #fff;
+    background-size: 100%;
+    background-repeat: round;
+    user-select: none;
+    //background: url("~@/assets/images/header/confirmBox.png");
+
+    .close {
+        position: absolute;
+        right: .01rem;
+        width: .3rem;
+        height: .3rem;
+        z-index: 5;
+        @include bg-img("~@/assets/images/header/missionPlanning/close.png");
+        cursor: pointer;
+    }
+
+    .chart {
+        @include size(100%, 100%);
+    }
+}

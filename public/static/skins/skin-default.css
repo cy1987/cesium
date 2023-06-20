@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+:root {
+    /* --------------------------------------------
+  字体
+  ---------------------------------------------*/
+    --text-color: #4d5867; /*字体颜色*/
+
+    --font-size-title-3: 0.16rem;
+    --font-size-title-4: 0.14rem;
+    --font-size-title-5: 0.12rem;
+    /* --------------------------------------------
+   背景颜色
+  ---------------------------------------------*/
+    /* 顶部菜单渐变色 */
+    --bg-header-left: #4860e6;
+    --bg-header-right: #3388ff;
+    --header-color: #fff;
+    --layout-background-color: #f4faff; /*主页面背景颜色页面*/
+    --component-background-color: #fff; /*页面组件背景*/
+    /* --------------------------------------------
+  边框阴影颜色
+  ---------------------------------------------*/
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    /* --------------------------------------------
+  菜单
+  ---------------------------------------------*/
+    --menu-background-color: #235;
+    --menu-item-background-color: #2d3d5d;
+    --menu-item-color: #abc;
+    --menu-item-background-hover: rgba(102, 102, 102, 0.473);
+    --menu-item-active-bg: #38f;
+    --menu-item-active-color: #fff;
+}

@@ -1,0 +1,26 @@
+@import "../category-tree/index.scss";
+
+.u-common-tree {
+    @include size(100%, 100%);
+    @include flex(column, flex-start, flex-start);
+    background: #fff;
+    @extend %tree-style;
+
+    .iconfont {
+        color: #38f;
+    }
+
+    .search {
+        @include size(100%, 0.6rem);
+        @include flex(row, flex-start, flex-start);
+        padding: 0.1rem;
+
+        .anticon-search {
+            color: #38f;
+        }
+
+        .ant-input {
+            border-radius: 4px;
+        }
+    }
+}

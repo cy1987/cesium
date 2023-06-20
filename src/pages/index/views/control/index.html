@@ -1,0 +1,71 @@
+<div class="control">
+    <!-- <div class="attend-box" @click="attendBtn" :style="status === 'end' ? 'display: flex' : 'display: none'" v-if="team !== 2">
+        <div class="text">准备就绪</div>
+    </div> -->
+    <nav class="header">
+        <div class="left">
+            <div class="name">
+                <span>国博运行管理服务平台</span>
+            </div>
+           
+        </div>
+        <div class="center" >
+               <menu class= "zhjt">智慧交通</menu>
+               <menu class= "zhny">智慧能源</menu>
+               <menu class= "zhsq">智慧社区</menu>
+               <menu class= "zhyy">智慧医养</menu>
+               <menu class= "zhss">智慧设施</menu>
+               
+
+        </div>
+        <div class="right">
+            
+      
+ 
+           
+        </div>
+    </nav>
+    
+    <!-- <Card class="card" id ="jtcard">
+        <p>最近更新时间：</p>
+        <p>2023年3月8日10：30</p>
+        <p>历史交通状态查询：</p>
+        <DatePicker></DatePicker>
+        <Button>查询</Button>
+    </Card> 
+     -->
+   
+    <div class="center-right" :style="pageStatus === 'plan' ? 'right: -80px' : 'right: 0'">
+        <ul class="right-toggle-selection-box">
+            <li
+                id="traffic"
+                :class="['li', { selected: rightSselectTitle === 'traffic' }]"
+                @click="rightSelectionBox('traffic')"
+            > <!-- class设置类通过css修改样式，click点击事件传输弹出框消息，函数可以在ts文件搜索找到  -->
+                <span class="toggle-selection-box-text s1">交通状况查询</span>
+            </li>
+            <!-- <menu class="jtzk" id="jtsearch">交通状况查询</menu> -->
+            <li
+                id="energy"
+                :class="['li', { selected: rightSselectTitle === 'energy' }]"
+                @click="rightSelectionBox('energy')"
+            > <!-- class设置类通过css修改样式，click点击事件传输弹出框消息，函数可以在ts文件搜索找到  -->
+                <span class="toggle-selection-box-text s2">能源供应情况查询</span>
+            </li>
+          
+        
+
+
+
+
+            <!--<menu class="nygy">能源供应情况查询</menu> -->
+            <menu class="jmjk">居民健康情况查询</menu>
+            <menu class="sqaq">社区安全情况查询</menu>
+    
+        </ul>
+    </div>
+
+    <div class="bottom">
+    </div>
+    <router-view :data="command" @drawEnd="clearCommand"/>
+</div>

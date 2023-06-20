@@ -1,0 +1,52 @@
+/*
+* 全局样式，如编辑图标的颜色
+*/
+%action-icon {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.iconfont {
+    &.icon-detail {
+        @extend %action-icon;
+        color: #38f;
+    }
+
+    &.icon-edit {
+        @extend %action-icon;
+        color: #38f;
+    }
+
+    &.icon-delete {
+        @extend %action-icon;
+        color: #f44;
+    }
+
+    &.icon-add {
+        @extend %action-icon;
+        color: #38f;
+    }
+}
+
+.common-tree-icon {
+    display: inline-block;
+    @include size(0.2rem, 0.2rem);
+    content: "";
+}
+
+.no-layout {
+    position: relative;
+    top: 50%;
+    width: 1.5rem;
+    height: 0.5rem;
+    padding: 0 0.2rem;
+    margin: 0 auto;
+    line-height: 0.5rem;
+    text-align: center;
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    transform: translateY(-50%);
+}

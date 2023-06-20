@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<div class="setting-wrapper">
+
+    <div v-if="showAdmin" class="seting-icon-wrap"
+        :class="{'active':'admin'===page}">
+        <span title="后台管理" class="setting-icon action-icon"
+            @click="onAdmin"></span>
+    </div>
+
+    <div class="user-wrapper" v-if="showUserPop">
+        <a-popover title="个人" trigger="click" placement="bottomRight"
+            :getPopupContainer="triggerNode => triggerNode.parentNode">
+            <template slot="content">
+                <div class="user-basic">
+                    <img class="basic-avatar" v-lazy="user.photo" />
+                    <div class="basic-username">{{username}}</div>
+                </div>
+
+                <a-divider />
+                <div class="user-handle">
+                    <div class="user-operate" @click="onUser">账号设置
+                    </div>
+                    <div class="user-operate" @click="onLogout">退出登录
+                    </div>
+                </div>
+            </template>
+
+            <img class="avatar" v-lazy="user.photo" />
+            <span class="username">{{username}}</span>
+        </a-popover>
+    </div>
+    <div v-else>
+        <img class="avatar" v-lazy="user.photo" />
+        <span class="username">{{username}}</span>
+    </div>
+</div>

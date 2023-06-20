@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.u-tree-selector {
+    .ivu-poptip-body {
+        max-height: 300px;
+        background: #00395f;
+        overflow: scroll;
+        .ivu-poptip-body-content {
+            overflow: hidden;
+        }
+    }
+    .ivu-tree-arrow {
+        display: none;
+    }
+    position: relative;
+    .icon-clear-value {
+        opacity: 0;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #808695;
+        cursor: pointer;
+    }
+    &:hover {
+        .icon-clear-value {
+            opacity: 1;
+        }
+    }
+}

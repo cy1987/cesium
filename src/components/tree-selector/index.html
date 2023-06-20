@@ -1,0 +1,29 @@
+<Poptip
+    transfer
+    class="u-tree-selector"
+    transfer-class-name="u-tree-selector"
+    trigger="click"
+    content="content"
+    placement="bottom"
+    v-model="visible"
+>
+    <Input
+        class="diy-input"
+        :value="inputValue"
+        @on-change="onInputChange"
+        readonly
+    />
+    <Icon
+        v-if="inputValue"
+        class="icon-clear-value"
+        type="ios-close-circle"
+        @click.stop="onClear"
+    />
+    <Tree
+        slot="content"
+        class="diy-tree"
+        :data="tree"
+        :render="renderContent"
+        @on-select-change="onSelectChange"
+    ></Tree>
+</Poptip>

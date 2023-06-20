@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.u-selector-tree-node {
+    @include flex(row, flex-start, center);
+    height: 0.24rem;
+    &::before, &::after{
+        height: 0.24rem!important;
+    }
+}

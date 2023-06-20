@@ -1,0 +1,15 @@
+<div class="traffic-box" :style="show ? 'right: .45rem' : 'right: -10rem'"> <!-- ts文件中show变量更新控制样式 -->
+    <div class="traffic-title">
+        交通状况查询
+        <span class="close" @click="close">×</span>
+    </div>
+    <div class="traffic-content">
+        <p>最近更新时间：</p>
+        <p>2023年3月8日10：30</p>
+        <p>历史交通状态查询：</p>
+        <a-date-picker v-model:value="date" value-format="YYYY-MM-DD"></a-date-picker>
+        <a-time-picker v-model:value="time" value-format="HH:mm:ss"/>
+        <a-button class="diy-btn" @click="search">查询</a-button> <!-- ant组件有些写了预设样式，class里把标签中的a改成diy就可以使用，如a-table class就写成diy-class，按钮是特例，为diy-btn
+                                                                    但是因为ant组件版本问题，可能有些样式有点问题 -->
+    </div>
+</div>

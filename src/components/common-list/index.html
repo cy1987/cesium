@@ -1,0 +1,24 @@
+<article class="u-common-list">
+    <slot name="header"></slot>
+    <ul class="list" v-if="list.length">
+        <li
+            class="list-item"
+            :class="{'list-item-selected':index === currentIndex}"
+            v-for="(item, index) in list"
+            :key="index + 'list'"
+            @click="onSelect(item, index)"
+        >
+            <div class="list-item-title">{{item.name}}</div>
+            <slot name="itemRight" :groupId="item.id"></slot>
+            <a-dropdown v-if="!item.hide" overlay-class-name="u-common-list-dropdown-menus" placement="bottomRight">
+                <a-icon type="more" :rotate="90" />
+                <a-menu slot="overlay" @click="onClickMenu($event,item)">
+                    <a-menu-item v-for="(menu,index) in menus" :key="menu.value">
+                        <span :style="{color: menu.color}">{{ menu.title }}</span>
+                    </a-menu-item>
+                </a-menu>
+            </a-dropdown>
+        </li>
+    </ul>
+    <a-empty class="empty" :description="emptyTip" v-else></a-empty>
+</article>

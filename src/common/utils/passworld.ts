@@ -1,0 +1,1 @@
+export const regPassword: RegExp = /^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)\S{8,}$/;

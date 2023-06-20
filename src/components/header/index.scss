@@ -1,0 +1,1051 @@
+.header {
+    user-select: none;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 58px;
+    background: url("~@/assets/images/header/headerBackground.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .decorate {
+        width: 1.88rem;
+        height: .33rem;
+        position: absolute;
+        top: .2rem;
+        left: .71rem;
+        background: url("~@/assets/images/header/project/header-left-c.png");
+        background-size: 100% 100%;
+    }
+    .left {
+        width: 7.04rem;
+        height: .33rem;
+        margin: .2rem 0 0 .13rem;
+        
+        .time {
+            width: 2.47rem;
+            height: .33rem;
+            display: inline-block;
+
+            span:nth-child(1) {
+                // margin-left: 30px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-size: .15rem;
+                font-weight: 500;
+                line-height: .33rem;
+                color: #fff;
+            }
+
+            span:nth-child(2) {
+                width: .6rem;
+                display: inline-block;
+                margin-left: .07rem;
+                font-family: UniDreamLED;
+                font-size: .15rem;
+                line-height: .33rem;
+                letter-spacing: .03rem;
+                color: rgba(255, 255, 255, 0.95);
+            }
+
+            span:nth-child(3) {
+                margin-left: .3rem;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-size: .14rem;
+                font-weight: 500;
+                line-height: .33rem;
+                color: #fb9a55;
+                text-shadow: 0 0 4px rgba(251, 154, 85, 0.5);
+            }
+
+        }
+        .page {
+            display: inline-block;
+            width: 1.7rem;
+            height: .34rem;
+            margin-left: -.25rem;
+            cursor: pointer;
+            background: url("~@/assets/images/header/EditBox.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            span {
+                display: inline-block;
+                width: 100%;
+                height: .22rem;
+                text-align: center;
+                margin: .06rem 0 0 0;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-size: .16rem;
+                font-weight: 500;
+                line-height: .22rem;
+                color: #95ccdb;
+            }
+        }
+
+        .selected {
+            background: url("~@/assets/images/header/EditBox_seleted.png");
+        }
+
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .center {
+        width: 5.03rem;
+        height: .35rem;
+        margin: .1rem 0;
+        text-align: center;
+        font-family: REEJI-HonghuangLiGB-SemiBold;
+        font-size: .24rem;
+        line-height: .35rem;
+        letter-spacing: .03rem;
+        color: #edf7fa;
+        text-shadow: 0 0 .07rem #001c2d;
+    }
+
+    .right {
+        display: flex;
+        width: 7.04rem;
+        height: .33rem;
+        margin: .19rem 0;
+        background: url("~@/assets/images/header/headerLeft.png");
+        background-size: 100%;
+        .time {
+            margin-left: .5rem;
+            width: 3rem;
+            height: .33rem;
+            display: inline-block;
+            // margin-left: 30px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-size: .15rem;
+            font-weight: 500;
+            line-height: .33rem;
+            color: #fff;
+            span {
+                width: .6rem;
+                display: inline-block;
+                margin-left: .07rem;
+                font-family: UniDreamLED;
+                font-size: .15rem;
+                line-height: .33rem;
+                letter-spacing: .03rem;
+                color: rgba(255, 255, 255, 0.95);
+            }
+        }
+        .camp {
+            width: .81rem;
+            height: .23rem;
+            margin: .05rem 0 0 .31rem;
+            background: url("~@/assets/images/header/xl.png");
+            background-size: 100%;
+            .ivu-select-selection {
+                height: .23rem;
+                background-color: transparent;
+                border: none;
+                color: #fff;
+                .ivu-select-placeholder {
+                    height: .23rem;
+                    color: #fff;
+                    line-height: .23rem;
+                }
+                .ivu-icon-ios-arrow-down:before {
+                    color: #fff;
+                }
+                .ivu-select-selected-value {
+                    height: .21rem;
+                    line-height: .21rem;
+                }
+            }
+            .ivu-select-dropdown {
+                width: 1.39rem;
+                height: 1.18rem;
+                background: url("~@/assets/images/header/mapping_select_box.png");
+                background-size: 100%;
+                overflow: hidden;
+                .ivu-select-dropdown-list {
+                    margin-top: .05rem;
+                    text-align: center;
+                    padding: .1rem;
+                    .ivu-select-item {
+                        width: 1.21rem;
+                        height: .2rem;
+                        margin-bottom: .1rem;
+                        padding: 0;
+                        color: #fff;
+                    }
+                    .ivu-select-item:hover {
+                        background-color: transparent;
+                        background: url("~@/assets/images/header/camp-select.png");
+                        background-size: 100%;
+                    }
+                    .ivu-select-item-focus {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        .icon {
+            width: .01rem;
+            height: .14rem;
+            margin: .1rem .07rem .07rem;
+            background: #346d8c;
+            opacity: 0.65;
+        }
+        .play-tool {
+            width: 2.2rem;
+            height: .32rem;
+            ul {
+                display: flex;
+                li {
+                    width: .45rem;
+                    height: .23rem;
+                    border: 0;
+                    margin: .05rem .15rem 0 0 ;
+                    padding: 0;
+                    list-style: none;
+                    cursor: pointer;
+                    background-size: 100%;
+                }
+                .withdraw {
+                    background: url("~@/assets/images/header/Previous.png");
+                    background-size: 100%;
+                }
+                .withdraw.disable {
+                    background: url("~@/assets/images/header/Previous-disable.png");
+                    background-size: 100%;
+                    cursor: not-allowed;
+                }
+                .withdraw:hover .tool-tip-1 {
+                    display: block;
+                }
+                .resume {
+                    background: url("~@/assets/images/header/next.png");
+                    background-size: 100%;
+                }
+                .resume.disable {
+                    background: url("~@/assets/images/header/next-disable.png");
+                    background-size: 100%;
+                    cursor: not-allowed;
+                }
+                .resume:hover .tool-tip-2 {
+                    display: block;
+                }
+                .edit {
+                    background: url("~@/assets/images/header/edit.png");
+                    background-size: 100%;
+                }
+                .edit.disable {
+                    background: url("~@/assets/images/header/edit-disable.png");
+                    background-size: 100%;
+                    cursor: not-allowed;
+                }
+                .edit:hover .tool-tip-3 {
+                    display: block;
+                }
+                .save {
+                    background: url("~@/assets/images/header/preservation.png");
+                    background-size: 100%;
+                }
+                .save.disable {
+                    background: url("~@/assets/images/header/preservation-disable.png");
+                    background-size: 100%;
+                    cursor: not-allowed;
+                }
+                .save:hover .tool-tip-4 {
+                    display: block;
+                }
+                .deleteFeature {
+                    margin: .05rem 0;
+                    background: url("~@/assets/images/header/delete.png");
+                    background-size: 100%;
+                }
+                .deleteFeature.disable {
+                    background: url("~@/assets/images/header/delete-disable.png");
+                    background-size: 100%;
+                    cursor: not-allowed;
+                }
+                .deleteFeature:hover .tool-tip-5 {
+                    display: block;
+                }
+            }
+        }
+        .tool-tip-1,.tool-tip-2,.tool-tip-3,.tool-tip-4,.tool-tip-5 {
+            z-index: 1;
+            position: absolute;
+            top: .52rem;
+            right: 3.39rem;
+            width: .9rem;
+            height: .29rem;
+            text-align: center;
+            line-height: .2rem;
+            font-size: .12rem;
+            line-height: .29rem;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #fff;
+            background: url("~@/assets/images/header/layer/toolTip.png");
+            background-size: 100%;
+            background-repeat: round;
+            text-shadow: 0px 0rem .04rem rgba(255, 255, 255, 0.8);
+            display: none;
+        }
+        .tool-tip-4 {
+            position: absolute;
+            top: .52rem;
+            right: 3.97rem;
+            display: none;
+        }
+        .tool-tip-3 {
+            position: absolute;
+            top: .52rem;
+            right: 4.2rem;
+            display: none;
+        }
+        .tool-tip-2 {
+            position: absolute;
+            top: .52rem;
+            right: 4.57rem;
+            display: none;
+        }
+        .tool-tip-1 {
+            position: absolute;
+            top: .52rem;
+            right: 5.15rem;
+            display: none;
+        }
+        .mapping-tool-box {
+            width: 2.57rem;
+            height: .23rem;
+            margin: .05rem 0 0 .1rem;
+            display: flex;
+            justify-content: space-between;
+            a {
+                display: block;
+                width: .8rem;
+                height: .22rem;
+                margin-right: .13rem;
+                color: #fff;
+                text-align: center;
+                background: url("~@/assets/images/header/tool.png");
+                background-size: 100%;
+            }
+            .ivu-dropdown {
+                z-index: 100;
+            }
+            .ivu-dropdown:nth-child(1) {
+                .ivu-select-dropdown {
+                    width: 1.39rem;
+                    height: 1.18rem;
+                    text-align: center;
+                    background: url("~@/assets/images/header/mapping_select_box.png");
+                    background-size: 100%;
+                    .ivu-dropdown-menu {
+                        padding: .15rem !important;
+                        .ivu-dropdown-item {
+                            width: 100%;
+                            height: .3rem;
+                            color: #fff;
+                            padding: 0;
+                        }
+    
+                        .ivu-dropdown-item:hover {
+                            // padding: 0;
+                            // margin: 7px 16px;
+                            background: url("~@/assets/images/header/mapping-check-box.png");
+                            background-repeat: no-repeat;
+                            background-size: 100% 60%;
+                        }
+                    }
+
+                }
+
+                .ch1 {
+                    display: inline-block;
+                    width: .15rem;
+                    height: .15rem;
+                    margin-top: .01rem;
+                    vertical-align: -14%;
+                    background: url("~@/assets/images/header/mapping_select_distance.png");
+                    background-size: 100%;
+                }
+
+                .ch2 {
+                    display: inline-block;
+                    width: .15rem;
+                    height: .15rem;
+                    margin-top: .01rem;
+                    vertical-align: -14%;
+                    background: url("~@/assets/images/header/cm.png");
+                    background-size: 100%;
+                }
+
+                .ch3 {
+                    display: inline-block;
+                    width: .15rem;
+                    height: .15rem;
+                    margin-top: .01rem;
+                    vertical-align: -14%;
+                    background: url("~@/assets/images/header/jd.png");
+                    background-size: 100%;
+                }
+                .spanClick {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+
+            .ivu-dropdown:nth-child(3) {
+                a {
+                    margin-right: 0;
+                }
+                .ivu-dropdown-item {
+                    padding: 0;
+                    width: .71rem;
+                    height: .26rem;
+                }
+                
+                .ivu-dropdown-item:hover {
+                    background: none;
+                }
+
+                .ivu-select-dropdown {
+                    // display: none;
+                    width: 3.51rem;
+                    height: 3.47rem;
+                    padding: .06rem .06rem .06rem .07rem;
+                    text-align: center;
+                    background: url("~@/assets/images/header/plotting_select_box.png");
+                    background-size: 100%;
+                    .plotting-box {
+                        width: 3.39rem;
+                        height: 5.46rem;
+
+                        .face-mark {
+                            width: 3.39rem;
+                            height: .88rem;
+
+                            .face-mark-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .03rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/m.png");
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .02rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .face-mark-content {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: 1.6rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-bottom: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0px 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+
+                        .arrow {
+                            width: 3.39rem;
+                            height: 1.6rem;
+
+                            .arrow-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .04rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/j.png");
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .03rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .arrow-content {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: 1.24rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-bottom: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .11rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0rem 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+
+                        .flag {
+                            width: 3.39rem;
+                            height: .86rem;
+
+                            .flag-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .04rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/flag.png");
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .02rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .flag-content {
+                                display: flex;
+                                // justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: 1.24rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-right: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .11rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0rem 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+
+                                .ivu-dropdown-item {
+                                    margin-right: .1rem;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            .ivu-dropdown:nth-child(2) {
+                .ivu-dropdown-item {
+                    padding: 0;
+                    width: .71rem;
+                    height: .26rem;
+                }
+                
+                .ivu-dropdown-item:hover {
+                    background: none;
+                }
+
+                .ivu-select-dropdown {
+                    width: 3.51rem;
+                    height: 3.11rem;
+                    text-align: center;
+                    background: url("~@/assets/images/header/region_select_box.png");
+                    background-image: 100%;
+                    background-repeat: no-repeat;
+
+                    .drawing-tools-box {
+                        width: 3.39rem;
+                        height: 3.34rem;
+
+                        .point-mark {
+                            width: 3.39rem;
+                            height: .88rem;
+
+                            .point-mark-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .04rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/d.png");
+                                    background-repeat: no-repeat;
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .03rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .point-mark-content {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: 1.6rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-bottom: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0rem 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+
+                        .line-mark {
+                            width: 3.39rem;
+                            height: .88rem;
+
+                            .line-mark-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .04rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/x.png");
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .03rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .line-mark-content {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: 1.24rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-bottom: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .11rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0rem 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+
+                        .face-mark {
+                            width: 3.39rem;
+                            height: .88rem;
+
+                            .face-mark-titel {
+                                width: 3.39rem;
+                                height: .22rem;
+                                padding-left: .13rem;
+                                text-align: left;
+                                background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+                                display: flex;
+                                .icon {
+                                    display: inline-block;
+                                    width: .15rem;
+                                    height: .15rem;
+                                    margin-top: .05rem;
+                                    vertical-align: -14%;
+                                    background: url("~@/assets/images/header/m.png");
+                                    background-repeat: no-repeat;
+                                    background-size: 100%;
+                                }
+
+                                .text {
+                                    width: 100%;
+                                    height: .17rem;
+                                    margin-top: .03rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .17rem;
+                                    color: #00cdff;
+                                }
+                            }
+
+                            .face-mark-content {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                width: 3.39rem;
+                                height: .88rem;
+                                padding: .1rem .13rem;
+
+                                div {
+                                    width: .71rem;
+                                    height: .26rem;
+                                    margin-bottom: .1rem;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-size: .12rem;
+                                    font-weight: 500;
+                                    line-height: .26rem;
+                                    color: #fff;
+                                    text-shadow: 0rem 0rem .04rem rgba(0, 198, 255, 0.8);
+                                    background: url("~@/assets/images/header/plotting.png");
+                                    background-size: 100%;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                                }
+                                div:hover {
+                                    background: url("~@/assets/images/header/plotting-hover.png");
+                                    background-size: 100%;
+                                }
+                                div:active {
+                                    background: url("~@/assets/images/header/plotting-active.png");
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }                
+        }
+        .user-icon {
+            position: absolute;
+            top: 50%;
+            right: 0.51rem;
+            margin-top: -0.01rem;
+            width: 0.01rem;
+            height: 0.14rem;
+            background: #346d8c;
+            opacity: 0.65;
+        }
+        .user {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.06rem;
+            width: 0.43rem;
+            height: 0.23rem;
+            background: url("~@/assets/images/header/portrait.png");
+            background-size: 100%;
+            cursor: pointer;
+        }
+    }
+
+    [disabled=disabled] {
+        cursor: not-allowed !important;
+        .tool-tip-6,.tool-tip-7 {
+            
+            position: absolute;
+            top: .1rem;
+            right: .1rem;
+            width: .9rem;
+            height: .29rem;
+            text-align: center;
+            line-height: .2rem;
+            font-size: .12rem;
+            line-height: .29rem;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #fff;
+            background: url("~@/assets/images/header/layer/toolTip.png");
+            background-size: 100%;
+            background-repeat: round;
+            text-shadow: 0rem 0rem .04rem rgba(255, 255, 255, 0.8);
+            display: none;
+        }
+        &:hover .tool-tip-6 {
+            display: block;
+        }
+        &:hover .tool-tip-7 {
+            display: block;
+            right: -.05rem;
+        }
+        a {
+            // background-image: url("~@/assets/images/header/select-disable.png") !important;
+            opacity: 0.5;
+            cursor: not-allowed !important;
+        }
+        .ivu-select-dropdown {
+            display: none;
+        }
+    }
+}
+
+.signOut-box {
+    position: absolute;
+    top: .55rem;
+    right: 0;
+    z-index: 100;
+    width: 1.38rem;
+    height: 0rem;
+    background: url("~@/assets/images/header/signOut-box.png");
+    background-size: 100%;
+    transition: all 0.4s ease;
+    .signOut-text {
+        width: 1.2rem !important;
+        height: 0rem;
+        width: .24rem;
+        margin: .22rem 0 0 .09rem;
+        text-align: center;
+        font-size: .12rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #fff;
+        line-height: .2rem;
+        cursor: pointer;
+    }
+    .signOut-text:hover {
+        background: url("~@/assets/images/header/signOut-selection.png");
+        background-size: 100%;
+    }
+}
+.signOutConfirm-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    width: 4.32rem;
+    height: 2.21rem;
+    background: url("~@/assets/images/header/signOutConfirm-box.png");
+    background-size: 100%;
+    .signOutConfirm-text-box {
+        display: flex;
+        .signOutConfirm-text {
+            width: 1.16rem;
+            height: .22rem;
+            font-size: .16rem;
+            margin: .04rem 0 0 1.6rem;
+            text-align: center;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #fff;
+            line-height: .22rem;
+            text-shadow: 0px 0rem .04rem #00c6ff;
+        }
+        .signOutConfirm-close {
+            width: .3rem;
+            height: .3rem;
+            margin: -.02rem 0 0 1.24rem;
+            background: url("~@/assets/images/header/close.png");
+            background-size: 100%;
+            cursor: pointer;
+        }
+    }
+    .signOutConfirm-paragraph-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        .signOutConfirm-paragraph-icon {
+            width: .17rem;
+            height: .17rem;
+            background: url("~@/assets/images/header/warning.png");
+            background-size: 100%;
+        }
+        .signOutConfirm-paragraph {
+            font-size: .14rem;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #fff;
+            line-height: .2rem;
+        }
+    }
+    .signOutConfirm-Confirm-box {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%,0);
+        display: flex;
+        justify-content: space-between;
+        width: 1.16rem;
+        height: .2rem;
+        .cancel,.confirm {
+            width: .54rem;
+            height: .2rem;
+            color: #fff;
+            line-height: .2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+        .cancel {
+            background: url("~@/assets/images/header/button/cancel.png");
+            background-size: 100%;
+        }
+        .cancel:hover {
+            background: url("~@/assets/images/header/button/cancel-hover.png");
+            background-size: 100%;
+        }
+        .cancel:active {
+            background: url("~@/assets/images/header/button/cancel-active.png");
+            background-size: 100%;
+        }
+        .confirm {
+            background: url("~@/assets/images/header/button/confirm.png");
+            background-size: 100%;
+        }
+        .confirm:hover {
+            background: url("~@/assets/images/header/button/confirm-hover.png");
+            background-size: 100%;
+        }
+        .confirm:active {
+            background: url("~@/assets/images/header/button/confirm-active.png");
+            background-size: 100%;
+        }
+    }
+}

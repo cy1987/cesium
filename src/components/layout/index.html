@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<article class="v-layout-wrapper">
+    <!-- 顶部菜单 -->
+    <!-- <header> -->
+        <!-- <div class="logo"></div> -->
+        <!-- <span class="title">xxxx</span>
+        <div class="rest">
+            <div class="app-item" v-for="(app,index) in apps"
+                :class="{'active':app.name===page}">
+                <a @click="routeTo(app)">{{app.meta.title}}</a>
+            </div>
+        </div>
+        <u-setting :showAdmin="true"
+            @onSetingClick="onSettingClick" />
+    </header> -->
+
+    <main>
+        <!-- 左侧菜单 -->
+        <!-- <nav class="nav-bar">
+            <div class="link-container">
+                <overlay-scrollbars :options="options">
+                    <router-link v-for="item in menuList"
+                        :key="item.name" v-if="item.name"
+                        :to="{name: item.name}" class="router-link"
+                        tag="div">
+                        <div class="menu-icon" ></div>
+                        {{item.meta?.title ?? item.title}}
+                    </router-link>
+                </overlay-scrollbars>
+            </div>
+        </nav> -->
+
+        <!-- 页面 -->
+        <section class="main-content">
+            <router-view> </router-view>
+        </section>
+    </main>
+</article>

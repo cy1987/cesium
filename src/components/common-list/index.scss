@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+.u-common-list {
+    @include size();
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    .empty{
+        margin-top: 1rem;
+    }
+
+    .diy-input {
+        margin-bottom: 0.1rem;
+    }
+
+    .list {
+        flex: 1;
+        width: 100%;
+        padding: 0;
+        overflow-x: auto;
+        list-style-type: none;
+
+        .list-item {
+            @include size(100%, 0.6rem);
+            @include flex(row, space-between, center);
+            position: relative;
+            padding: 0 0.2rem;
+            margin-bottom: 1px;
+            line-height: 0.4rem;
+            cursor: pointer;
+            background-image: linear-gradient(to left, #eaf3ff 100%);
+            background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            box-shadow: 0 1px 0 0 #eee;
+
+            .anticon-more {
+                opacity: 0;
+                font-size: 0.24rem;
+            }
+
+            &::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                width: 0;
+                height: 100%;
+                background-color: #38f;
+                content: "";
+            }
+
+            .list-item-title {
+                flex: 1;
+                width: 100%;
+                overflow: hidden;
+                font-size: 0.16rem;
+                color: #235;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            &:hover {
+                background-size: 100% 100%;
+                // transition: background-size 0.2s ease-in-out;
+
+                .anticon-more {
+                    // color: #38f;
+                    opacity: 1;
+                    &:hover{
+                        color: #38f;
+                    }
+                }
+            }
+        }
+
+        .list-item-selected {
+            background-size: 100% 100%;
+
+            .list-item-title {
+                font-weight: bold;
+                color: #38f;
+            }
+
+            &::after {
+                width: 4px;
+                transition: width 0.2s ease-in-out;
+            }
+        }
+    }
+}
+
+.u-common-list-dropdown-menus {
+    .anticon-more {
+        margin: 0 0.2rem;
+        opacity: 0;
+    }
+
+    .ant-dropdown-menu-item {
+        height: 0.38rem;
+        min-width: 1.4rem;
+        padding: 0 0.2rem;
+        line-height: 0.38rem;
+        transition: none;
+      
+
+        &:hover {
+            font-weight: 550;
+            color: #38f;
+        }
+    }
+}

@@ -1,0 +1,195 @@
+.login-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000;
+    zoom: 1;
+    background-color: #fff;
+    background: url("../../assets/images/login/loginImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+    .pwd {
+        color: #fff;
+    }
+    .logoNav {
+        width: 100%;
+        height: 38px;
+        display: flex;
+        justify-content: space-between;
+        .logoNav-left {
+            width: 554px;
+            height: 38px;
+            margin-top: 25px;
+            margin-left: 46px;
+            display: flex;
+            .icon {
+                width: 38px;
+                height: 38px;
+                background: url("~@/assets/images/login/juntailogo.png");
+            }
+            .text {
+                width: 508px;
+                height: 30px;
+                font-size: 22px;
+                margin: 4px 0 0 8px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #DEFAFF;
+                line-height: 30px;
+            }
+        }
+        .logoNav-right {
+            width: 271px;
+            height: 38px;
+            margin-top: 25px;
+            margin-right: 46px;
+            display: flex;
+            .date {
+                width: 155px;
+                height: 20px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #fff;
+                line-height: 38px;
+            }
+            .time {
+                width: 92px;
+                height: 25px;
+                // margin-left: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                color: rgba(255, 255, 255, 0.95);
+                line-height: 38px;
+                letter-spacing: 3px;
+            }
+        }
+
+    }
+    .title {
+        position: absolute;
+        top: 9%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #e4f5ff;
+        font-size: 0.42rem;
+        font-weight: 400;
+        color: #e4f5ff;
+        letter-spacing: 3px;
+        font-family: REEJI-HonghuangLiGB-SemiBold, REEJI-HonghuangLiGB;
+    }
+    .ivu-form {
+        .ivu-form-item {
+            margin-bottom: 0.3rem;
+            .ivu-form-item-content {
+                display: flex;
+                .ivu-btn {
+                    width: 4.91rem;
+                    height: 0.45rem;
+                    margin-top: .3766rem;
+                    border: none;
+                    // background: linear-gradient(180deg, #43def5, #0075ac);
+                    background: url("../../assets/images/login/button.png");
+                    background-size: 100% 100%;
+                }
+                .ivu-btn:hover {
+                    background: url("~@/assets/images/login/button-hover.png");
+                }
+                .ivu-btn:active {
+                    background: url("~@/assets/images/login/button-click.png");
+                }
+                .remember {
+                    margin-left: 0.03rem;
+                    margin-top: -0.15rem;
+                }
+                .ivu-form-item-error-tip {
+                    position: absolute;
+                    left: 0.9rem;
+                }
+                .ivu-input {
+                    border: none;
+                    border-bottom: 1px solid #27D5FF;
+                    border-radius: 0;
+                    outline: none;
+                    width: 3.9rem;
+                    height: 0.42rem;
+                    color: #fff;
+                    font-size: 0.16rem;
+                    // border: 2px solid;
+                    // border-image: linear-gradient(135deg, #7fe2ff, #70b0f7 52%, #467ee2) 2 2;
+                    margin-left: 0.55rem;
+                    background: transparent;
+                }
+                .ivu-input:focus {
+                    -webkit-box-shadow: 0 0 0 0;
+                    box-shadow: 0 0 0 0;
+                    outline: 0;
+
+                }
+                .ivu-input:hover {
+                    -webkit-box-shadow: 0 0 0 0;
+                    box-shadow: 0 0 0 0;
+                    outline: 0;
+                }
+                img {
+                    width: 0.22rem;
+                    position: absolute;
+                    top: 0.1rem;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+    input::-webkit-input-placeholder {
+        color: #fff;
+        font-size: 0.15rem;
+    }
+    .inputBox {
+        position: absolute;
+        top: 24%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4.91rem;
+        height: 3.68rem;
+        background: url("../../assets/images/login/loginBox.png") no-repeat;
+        background-size: 100%;
+        .ivu-icon-ios-contact,.ivu-icon-ios-lock {
+            margin: .06rem 0 0 .67rem;
+            color: #75afbe;
+        }
+        .inputBoxTitle {
+            // font-size: 0.4rem;
+            // color: #fff;
+            // text-align: center;
+            margin: 0.8rem 0 0.3rem 1.85rem;
+            width: 1.2rem;
+            height: .33rem;
+            font-size: .24rem;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #fff;
+            line-height: .33rem;
+            text-shadow: 0px 0px 4px rgba(0, 208, 251, 0.7);
+        }
+        .remember {
+            padding-left: 0.7rem;
+        }
+        .ivu-icon-ios-eye-off-outline,.ivu-icon-ios-eye-outline {
+            margin: 10px 0 0 -77px;
+            color: #fff;
+            // display: none;
+        }
+        .ivu-input-wrapper:hover .ivu-input-icon-clear {
+            // margin: 10px 0 0 -77px;
+            top: 6px;
+            right: 40px;
+            color: #fff;
+            display: inline-block;
+        }
+    }
+}

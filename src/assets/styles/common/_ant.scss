@@ -1,0 +1,830 @@
+/*
+ * @Description: 按照公司规范重写 ant-design 的组件样式
+ *- 重写类名方式为 .diy-*
+ *- 为了方便查找，在类前可以增加关键词
+ *- 增加样式时，应按照antdesign文档列出的组件顺序插入
+ *- antdesign: https://www.antdv.com/components/
+ *- UI设计规范: https://app.mockplus.cn/app/deUaz7uNVi_/design
+ */
+
+// $namespace: "diy";
+// //  @mixin      =
+// //  @include    +
+// @mixin name($block) {
+//     $B: $namespace + "-" + $block !global;
+
+//     .#{$B} {
+//         @content;
+//     }
+// }
+
+/**********************************************
+# General: Button, Icon
+**********************************************/
+
+/*--------------- Button ---------------*/
+$height: 0.22rem;
+$color-primary: $--color-primary;
+
+%diy-btn-size {
+    height: $height;
+    line-height: calc(#{$height} - 0.02rem);
+}
+
+.diy-btn-size {
+    @extend %diy-btn-size;
+}
+
+%diy-btn {
+    @extend %diy-btn-size;
+    font-size: 0.16rem;
+    letter-spacing: 0.01rem;
+    border-radius: 0;
+}
+
+.diy-btn {
+    @extend %diy-btn;
+    // border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(0, 0, 0, 0);
+        // border: none;
+        // box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.19);
+    }
+}
+
+.diy-btn-default {
+    @extend %diy-btn;
+    color: $color-primary;
+    border-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover,
+    &:focus {
+        background-color: #f1f7ff;
+        border: 1px solid $color-primary;
+    }
+}
+
+.diy-btn-primary {
+    @extend %diy-btn;
+    border-color: $color-primary;
+
+    &:hover,
+    &:focus {
+        background-color: #006aff;
+        border: 1px solid $color-primary;
+    }
+}
+
+.diy-btn-dashed,
+.diy-btn-danger,
+.diy-btn-link {
+    @extend %diy-btn;
+}
+
+// .diy-btn {
+//     @extend %diy-btn;
+// }
+
+// .diy-btn-default {
+//     @extend %diy-btn;
+//     // color: #578aff;
+//     border: 1px solid #ccc;
+// }
+
+// .diy-btn-text {
+//     @extend %diy-btn;
+//     color: #457;
+//     background-color: #fff;
+//     border: 1px solid #ccc;
+// }
+
+// .diy-btn-primary {
+//     @extend %diy-btn;
+//     // background: linear-gradient(135deg, #b3c0ff 0%, #2061d3 100%);
+//     background-color: #38f;
+//     border: 0;
+// }
+
+// .diy-btn-success {
+//     @extend %diy-btn;
+//     background: linear-gradient(134deg, #44d7b6 9%, #0cb782);
+//     border: 0;
+// }
+
+// .diy-btn-error {
+//     @extend %diy-btn;
+//     background-color: #ed4014;
+//     border: 0;
+//     border-color: #ed4014;
+// }
+
+/**********************************************
+# Layout:
+**********************************************/
+
+/**********************************************
+# Navigation
+**********************************************/
+/*--------------- pagination ---------------*/
+.diy-pagination {
+    height: $height;
+
+    .ant-pagination-item-active {
+        background-color: #38f;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .ant-pagination-item,
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+        height: $height;
+        line-height: $height;
+    }
+
+    .ant-pagination-item,
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link,
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next,
+    .ant-select-selection {
+        border-radius: 0;
+    }
+
+    .ant-pagination-total-text {
+        font-weight: 600;
+        color: #38f;
+
+        &::before {
+            font-weight: 500;
+            color: #000;
+            content: "共 ";
+        }
+
+        &::after {
+            font-weight: 500;
+            color: #000;
+            content: " 条";
+        }
+    }
+
+    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+        background-color: #f3fbfe;
+    }
+}
+
+/**********************************************
+# Data Entry
+**********************************************/
+
+/*--------------- Input ---------------*/
+.diy-cascader {
+    .ant-input {
+        height: $height;
+        border-radius: 0;
+    }
+}
+
+/*--------------- diy-date-picker, diy-range-picker 时间选择器 ---------------*/
+.diy-date-picker {
+    color: #fff;
+    background: #004764;
+    border: 1px solid #00C6FF;
+    height: .23rem;
+
+    .ant-picker-suffix {
+        color: #00C6FF;
+    }
+
+    .ant-picker-input input {
+        color: #fff;
+    }
+}
+
+.diy-range-picker {
+    .ant-input {
+        height: $height;
+        border-radius: 0;
+    }
+
+    .ant-calendar-picker-input.ant-input {
+        line-height: 1;
+    }
+}
+
+/*--------------- Input ---------------*/
+%diy-input-size {
+    height: $height;
+    line-height: $height;
+
+    .ant-input {
+        height: 100%;
+        // border-radius: 0;
+    }
+
+    .ant-input-group {
+        @include flex(row, center, center);
+        height: $height;
+        line-height: 1;
+        // overflow: hidden;
+    }
+
+    .ant-input-group-addon {
+        @include flex(row, center, center);
+        width: auto;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+
+        .ant-btn {
+            // border: 0;
+            height: 100%;
+            line-height: $height;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
+}
+
+.diy-input {
+    @extend %diy-input-size;
+    border-radius: 0;
+    background: #0f4472;
+    // opacity: 0.7;
+    border: 1px solid #1899bb;
+    color: #fff;
+
+    ::input-placeholder {
+        color: #679 !important;
+    }
+
+    &:hover {
+        border: 1px solid #38f;
+    }
+
+    .ant-input {
+        // padding: 0;
+        height: 100%;
+        // height: calc(100% - 1px);
+    }
+}
+
+.diy-textarea {
+    border-radius: 0;
+}
+
+/*--------------- InputSearch ---------------*/
+.diy-input-search {
+    @extend %diy-input-size;
+    border: .01rem solid #1899bb;
+    border-radius: 0;
+    margin: 0 .1rem;
+    background-color: #0f4472;
+    box-sizing: content-box;
+    transition: all 0.3s, height 0s;
+    &:hover {
+        border: 1px solid #38f;
+    }
+
+    .ant-input {
+        background-color: #0f4472;
+        color: #fff;
+        border: 0 !important;
+        box-shadow: none !important;
+        border-right-width: 0 !important;
+    }
+
+    .ant-input-search-button {
+        background-color: #0f4472;
+        border: none;
+    }
+
+    .ant-input-group-addon {
+        background-color: #0f4472;
+    }
+}
+
+/*--------------- InputNumber ---------------*/
+.diy-input-number {
+    @extend %diy-input-size;
+    border-radius: 0;
+
+    .ant-input-number-input {
+        height: $height;
+    }
+}
+
+/*--------------- Radio ---------------*/
+.diy-radio {
+    .ant-radio-wrapper {
+        color: #fff;
+    }
+}
+
+/*--------------- Select ---------------*/
+.diy-select {
+    height: $height;
+    border-radius: 0;
+
+    .ant-select-selector {
+        color: #fff;
+        background: #004764;
+        border: 1px solid #00C6FF;
+        height: .23rem;
+        .ant-select-selection-item {
+            line-height: .23rem;
+            padding-right: 0;
+        }
+    }
+    .ant-select-arrow {
+        color: #fff;
+    }
+    // .ant-select-selection,
+    // .ant-select-selection__rendered {
+    //     height: calc(#{$height} - 1px);
+    //     min-height: 20px;
+    //     line-height: calc(#{$height} - 1px);
+    //     border-radius: 0;
+
+    //     .ant-select-selection__choice {
+    //         height: calc(#{$height} - 7px);
+    //         line-height: calc(#{$height} - 7px);
+    //     }
+    // }
+}
+
+.diy-select.ant-select:not(.ant-select-customize-input) {
+    .ant-select-selector {
+        color: #fff;
+        background: #004764;
+        border: 1px solid #00C6FF;
+        height: .23rem;
+    }
+    .ant-select-selection-search-input {
+        height: .23rem;
+        line-height: .23rem;
+    }
+}
+
+/*--------------- diy-upload ---------------*/
+.diy-upload {
+    .ant-upload-list-picture {
+        > div {
+            > span {
+                display: block;
+            }
+        }
+    }
+
+    .ant-upload-list-item-list-type-picture {
+        display: inline-block;
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .ant-upload-list-item-info > span {
+        @include flex(row, flex-start, center);
+
+        .ant-upload-list-item-thumbnail {
+            @include size(0.8rem, 100%);
+        }
+    }
+
+    .ant-upload-list-picture .ant-upload-list-item {
+        height: 0.62rem;
+    }
+
+    .ant-upload-list-item-card-actions.picture {
+        position: relative;
+        top: 0;
+        margin: 0.1rem;
+
+        .anticon-delete {
+            color: #f23c24;
+        }
+    }
+
+    .ant-upload-list-picture .ant-upload-list-item-thumbnail {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        img {
+            @include size;
+        }
+    }
+
+    .ant-upload-list-item-name {
+        flex: 1;
+        padding: 0;
+        margin-right: 0.1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.diy-upload-picture-card {
+}
+
+/**********************************************
+# Data Display
+**********************************************/
+
+/*--------------- Collapse ---------------*/
+.diy-collapse {
+    border-radius: 0;
+
+    &.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+        height: 0.52rem;
+        // padding: 0 16px 0 40px;
+        line-height: 0.52rem;
+        background: #fff;
+    }
+}
+
+/*--------------- table ---------------*/
+.diy-table {
+    background-color: transparent;
+
+    .ant-table {
+        background-color: transparent;
+        border-radius: 0;
+        border: .01rem solid rgba(20, 82, 111, 1);
+    }
+
+    .ant-table-content {
+        font-size: 0.16rem;
+    }
+
+    .ant-table-container {
+        border: none;
+        border-radius: 0;
+    }
+
+    .ant-table-tbody>tr.ant-table-row:hover>td, .ant-table-tbody>tr>td.ant-table-cell-row-hover {
+        background-color: transparent;
+    }
+
+    .ant-table-thead > tr > th {
+        position: relative;
+        font-weight: 600;
+        // background-color: #f2f2f2;
+        color: #fff;
+        background-color: rgba(0, 58, 90, 0.8);
+        padding: 0 0.16rem;
+        font-size: 0.12rem;
+        line-height: 0.4rem;
+        border-right: .01rem solid rgba(20, 82, 111, 1);
+        border-bottom: .01rem solid rgba(20, 82, 111, 1);
+
+        .ant-table-cell-row-hover {
+            background-color: transparent !important;
+            transition: none;
+        }
+    }
+
+    .ant-table-tbody > tr > td {
+        border-right: .01rem solid rgba(20, 82, 111, 1);
+        border-bottom: .01rem solid rgba(20, 82, 111, 1);
+        background-color: rgba(0, 44, 68, 0.15);
+        padding: 0 0.16rem;
+        line-height: 0.4rem;
+        font-size: .12rem;
+        color: #fff;
+        transition: none;
+    }
+
+    .ant-table-tbody > tr.table-striped > td {
+        background-color: rgba(0, 69, 107, 0.30);
+    }
+
+    // .ant-table-striped :deep(.table-striped) td {
+    //     background-color: rgba(0, 69, 107, 0.30);
+    // }
+
+    .ant-table-thead > tr > th:not(:last-child)::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        height: 35%;
+        // border-left: 1px solid #e4e4e4;
+        content: "";
+        transform: translateY(-50%);
+    }
+
+    .ant-pagination {
+        @extend .diy-pagination;
+    }
+}
+
+/*--------------- Tabs ---------------*/
+.diy-tabs {
+    .ant-tabs-ink-bar {
+        height: 0.03rem;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab {
+        padding: 0;
+        padding: 0.14rem 0.28rem;
+    }
+
+    &.ant-tabs-card {
+        .ant-tabs-nav-wrap {
+            padding: 0.1rem;
+            padding-bottom: 0;
+            background: #e4e4e4;
+        }
+
+        .ant-tabs-card-bar .ant-tabs-tab {
+            padding: 0.1rem 0.2rem;
+            background: #e4e4e4;
+            border-radius: 0.08rem 0.08rem 0 0;
+
+            .ant-tabs-close-x {
+                margin-left: 0.3rem;
+            }
+        }
+
+        .ant-tabs-tab {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 0.1rem;
+                display: inline-block;
+                border-left: 1px solid #e4e4e4;
+                content: "";
+                transform: translateY(-50%);
+                @include size(1px, 10px);
+            }
+
+            &.ant-tabs-tab-active {
+                background: #fff;
+
+                &::after {
+                    border-left: 1px solid $--color-primary;
+                }
+            }
+        }
+
+        .ant-tabs-card-bar .ant-tabs-tab,
+        .ant-tabs-card-bar .ant-tabs-tab-active,
+        .ant-tabs-card-bar .ant-tabs-nav-container {
+            height: auto;
+            line-height: 1;
+        }
+    }
+}
+
+/*--------------- Tree ---------------*/
+.diy-tree.ant-tree {
+    $nodeHeight: 0.4rem;
+    position: relative;
+    color: #fff;
+    margin: .11rem .12rem;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+
+    li {
+        padding: 1px 0;
+    }
+
+    .ant-tree-child-tree > li:first-child {
+        padding-top: 2px;
+    }
+
+    &.ant-tree li .ant-tree-node-content-wrapper,
+    // &.ant-tree li span.ant-tree-checkbox,
+    &.ant-tree li span.ant-tree-switcher,
+    &.ant-tree li span.ant-tree-switcher .anticon-loading,
+    &.ant-tree li span.ant-tree-iconEle {
+        height: $nodeHeight;
+        line-height: $nodeHeight;
+    }
+
+    &.ant-tree li span.ant-tree-switcher {
+        vertical-align: middle;
+    }
+
+    .ant-tree-checkbox {
+        // display: inline-block;
+        // vertical-align: middle;
+        // height: auto;
+        // .ant-tree-checkbox-inner {
+        //     display: inline-block;
+        //     vertical-align: middle;
+        // }
+    }
+
+    &.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+        background-color: unset;
+    }
+
+    .ant-tree-title {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        @include ellipsis;
+    }
+
+    .ant-tree-node-content-wrapper {
+        width: calc(100% - 24px);
+
+        &::after,
+        &::before {
+            position: absolute;
+            right: 0;
+            left: 0;
+            display: inline-block;
+            width: 0;
+            height: calc(#{$nodeHeight} - 0.12rem);
+            pointer-events: none;
+            content: "";
+            transition: width 0.2s ease-in-out;
+        }
+
+        &.ant-tree-node-selected {
+            &::after {
+                width: 100%;
+                background-color: rgba(51, 136, 255, 0.1);
+            }
+
+            &::before {
+                right: 0;
+                left: unset;
+                width: 4px;
+                background-color: #38f;
+            }
+        }
+
+        &:not(.ant-tree-node-selected):hover::after {
+            width: 100%;
+            background-color: rgba(146, 191, 255, 0.1);
+        }
+    }
+
+    .ant-tree-checkbox + .ant-tree-node-content-wrapper {
+        width: calc(100% - 46px);
+    }
+
+    &.ant-tree li .ant-tree-node-content-wrapper:hover {
+        background-color: unset;
+    }
+    
+    .army-add {
+        float: right;
+        width: .14rem;
+        height: .14rem;
+        margin: .05rem 0 0 0;
+        background: url("~@/assets/images/header/action/add.png");
+        background-size: 100%;
+    }
+
+    &-title {
+        display: inline-block;
+        width: 2.3rem;
+        font-size: .14rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: start;
+
+        .container {
+            width: 2.1rem;
+            overflow: hidden;
+        }
+    }
+
+    &-switcher {
+        color: #fff;
+    }
+
+    &-node {
+        &-content-wrapper {
+            width: 2.3rem;
+
+            .container {
+                &:hover {
+                    background-image: url("~@/assets/images/map/selectedBorder.png");
+                    background-size: 100% 100%;
+                    opacity: 0.6;
+                }
+            }
+        }
+        &-selected {
+            background-color: rgba(0, 0, 0, 0) !important;
+
+            .container {
+                background-image: url("~@/assets/images/map/selectedBorder.png");
+                background-size: 100% 100%;
+            }
+        }
+    }
+
+    .num {
+        transform: translateY(-2px);
+    }
+    
+    .icon {
+        width: .16rem;
+        height: .16rem;
+        margin-right: 3px;
+    }
+
+    .ant-tree-node-content-wrapper:hover {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .ant-dropdown-trigger {
+        display: inline-block;
+        width: 2rem;
+    }
+
+    .ant-tree-node-selected {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+/**********************************************
+# Feedback
+**********************************************/
+
+/*--------------- Modal ---------------*/
+.diy-modal {
+    .ant-modal-header {
+        height: 0.41rem;
+        padding: 0 0.2rem;
+        background: linear-gradient(90deg, #38f, #00a0e9);
+        border-radius: 5px 5px 0 0;
+
+        .ant-modal-title {
+            height: 0.41rem;
+            font-family: "PingFangSC", "PingFangSC-Semibold";
+            font-weight: 600;
+            line-height: 0.41rem;
+            color: #fff;
+        }
+    }
+
+    .ant-modal-close {
+        @include size(0.41rem, 0.41rem);
+    }
+
+    .ant-modal-close-x {
+        @include size(0.41rem, 0.41rem);
+        line-height: 0.41rem;
+        color: #fff;
+    }
+
+    .ant-modal-content {
+        border-radius: 5px;
+    }
+
+    .ant-modal-footer {
+        p {
+            margin-bottom: 0;
+        }
+
+        .diy-btn {
+            width: 1.2rem;
+        }
+
+        .ant-btn {
+            @extend .diy-btn;
+        }
+
+        .ant-btn-primary {
+            @extend .diy-btn-primary;
+        }
+    }
+}
+
+/**********************************************
+# Other
+**********************************************/
+
+/* ----------------修改spin加载动画样式--------------------*/
+.diy-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+}

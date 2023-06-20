@@ -1,0 +1,15 @@
+<a-modal v-model="show" class="magic-modal u-add-category-modal" :title="title" @ok="onSave">
+    <a-form-model
+        ref="form"
+        class="magic-form-model"
+        labelAlign="left"
+        :model="data"
+        :rules="rules"
+        :label-col="{ span: 4 }"
+        :wrapper-col="{ span: 20 }"
+    >
+        <a-form-model-item label="分组名称" prop="name" placeholder="请输入分组名称">
+            <a-input v-model="data.name" placeholder="请输入分组名称"></a-input>
+        </a-form-model-item>
+    </a-form-model>
+</a-modal>

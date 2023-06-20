@@ -1,0 +1,24 @@
+<viewer class="u-image-viewer" :images="list">
+    <template v-if="showLoading">
+        <img
+            class="image"
+            v-for="(image, index) in list"
+            v-image="{image, loadingImg, errorImg }"
+            :key="index"
+            @error="onHandleError"
+        />
+    </template>
+    <template v-else>
+        <img
+            class="image"
+            v-for="(image, index) in list"
+            :src="image"
+            :key="index"
+            @error="onHandleError"
+        />
+    </template>
+
+    <template v-if="!list.length">
+        <div class="empty-message">暂无图片</div>
+    </template>
+</viewer>

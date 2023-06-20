@@ -1,0 +1,43 @@
+.v-error {
+    &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 700px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+
+        &-title {
+            height: 260px;
+            margin-top: 40px;
+            font-size: 240px;
+            font-weight: 700;
+            line-height: 260px;
+            color: #2d8cf0;
+            text-align: center;
+        }
+        
+        &-message {
+            display: block;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #dddde2;
+            text-align: center;
+        }
+    }
+    
+    &-button-strip {
+        padding: 20px 0;
+        margin-bottom: 40px;
+        text-align: center;
+
+        .ant-btn {
+            width: 200px;
+
+            &:last-child {
+                margin-left: 40px;
+            }
+        }
+    }
+}

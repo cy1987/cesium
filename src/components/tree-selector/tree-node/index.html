@@ -1,0 +1,10 @@
+<div class="u-selector-tree-node" @click="onClickNode">
+    <!-- <i-icon v-if="!isFolder" type="ios-bookmark-outline" /> -->
+    <template v-if="isFolder">
+        <Icon
+            @click.stop="onClickIcon"
+            :type="data.expand? 'md-arrow-dropdown': 'md-arrow-dropright'"
+        ></Icon>
+    </template>
+    <span>{{data.title}}</span>
+</div>

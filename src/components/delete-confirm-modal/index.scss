@@ -1,0 +1,32 @@
+.delete-confirm-body {
+    display: flex;
+
+    .micon-xingzhuang {
+        font-size: 0.3rem;
+        color: #ff6161;
+    }
+    .delete-content {
+        display: flex;
+        flex: 1;
+        margin: 0.1rem 0.2rem;
+        flex-direction: column;
+    }
+    .main-title {
+        font-weight: bold;
+        font-size: 0.16rem;
+        color: #223355;
+    }
+    .sub-title {
+        margin: 0.1rem 0;
+        font-size: 0.14rem;
+        color: #667799;
+    }
+
+    .ant-modal-body {
+        padding-bottom: 0;
+    }
+
+    .ant-modal-footer {
+        border-top: none;
+    }
+}

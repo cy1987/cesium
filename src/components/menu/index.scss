@@ -1,0 +1,228 @@
+@charset "UTF-8";
+$menu-item-active-bg: var(--menu-item-active-bg, #38f);
+$menu-item-active-color: var(--menu-item-active-color, #fff);
+$menu-item-color: var(--menu-item-color, #abc);
+$menu-item-background-hover: var(--menu-item-background-hover,
+rgba(102, 102, 102, 0.473));
+$background-color: var(--menu-background-color, #235);
+
+.u-menu {
+    $box-shadow-color: var(--box-shadow-color, rgba(0, 0, 0, 0.1));
+    $transition-duration: 0.2s;
+    // $menu-item-background-color: var(--menu-item-background-color, #2d3d5d);
+    @include size(2.2rem, 100%);
+    display: flex;
+    min-width: 160px;
+    padding: 0.1rem 0.05rem 0;
+    overflow: hidden;
+    font-family: "PingFangSC, PingFangSC-Regular";
+    font-weight: 400;
+    background-color: $background-color;
+    box-shadow: 5px 0 5px 0 $box-shadow-color;
+    transition-duration: $transition-duration;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    flex-direction: column;
+
+    > .menu-section {
+        flex: 1;
+        overflow: hidden;
+
+        .os-host {
+            height: 100%;
+        }
+
+        .menu-group {
+            .menu-group-title {
+                .menu-group-title-name {
+                    flex: 1;
+                }
+
+                .ivu-icon-md-arrow-dropdown {
+                    transition: transform $transition-duration ease-in-out;
+                }
+            }
+
+            .menu-item-container {
+                overflow: hidden;
+                transition: height $transition-duration ease-in-out;
+            }
+
+            &.opened {
+                .ivu-icon-md-arrow-dropdown {
+                    transform: rotateZ(180deg);
+                }
+
+                .menu-item-container {
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .router-link {
+            @include size(100%, 0.6rem);
+            @include flex(row, flex-start, center);
+            padding: 0 0.31rem;
+            font-size: 0.16rem;
+            font-weight: 600;
+            color: $menu-item-color;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                background-color: $menu-item-background-hover;
+                // border-radius: 0.08rem;
+                box-shadow: 0.01rem 0.01rem 0.03rem 0.01rem
+                    $menu-item-background-hover;
+            }
+
+            > span {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            > .iconfont {
+                margin-right: 0.18rem;
+                font-size: 0.16rem;
+                color: $menu-item-color;
+            }
+
+            &.router-link-active {
+                @extend %router-link-active;
+            }
+        }
+
+        .menu-item,
+        .menu-group-title {
+            font-size: 0.18rem;
+
+            .router-link {
+                font-size: 0.18rem;
+            }
+        }
+
+        .menu-group .menu-item {
+            .router-link {
+                font-size: 0.16rem;
+            }
+        }
+
+        .menu-item,
+        .menu-group {
+            margin-top: 1px;
+        }
+
+        .iconfont.circle {
+            display: inline-block;
+            margin-left: 0.2rem;
+            border: 2px solid $menu-item-color;
+            border-radius: 4px;
+            @include size(8px, 8px);
+        }
+    }
+
+    > .menu-collaps-btn {
+        width: 100%;
+        padding: 0 0.2rem;
+        color: $menu-item-color;
+
+        .iconfont {
+            display: inline-block;
+            padding: 0.1rem;
+            font-size: 0.16rem;
+            cursor: pointer;
+            transform: rotateZ(0deg);
+            transition: transform $transition-duration ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.u-menu.collapsed {
+    width: 0.6rem;
+    min-width: 50px;
+
+    > .menu-section {
+        .menu-group.active {
+            background-color: $menu-item-background-hover;
+            border-radius: 0.08rem;
+        }
+
+        .router-link {
+            @include flex(row, center, center);
+            padding: 0;
+
+            .iconfont {
+                margin: 0;
+            }
+
+            &.router-link-active {
+                background-size: 90% 95%;
+            }
+        }
+
+        .ivu-dropdown,
+        .ivu-dropdown-rel {
+            width: 100%;
+        }
+    }
+
+    > .menu-collaps-btn {
+        padding: 0;
+        text-align: center;
+
+        .iconfont {
+            margin-right: unset;
+            transform: rotateZ(180deg);
+        }
+    }
+}
+
+// 收起后二级子菜单
+.ivu-dropdown-menu-diy {
+    background-color: $background-color;
+
+    .ivu-dropdown-item {
+        padding: 0;
+        font-size: 0.16rem;
+        color: $menu-item-color;
+
+        &:hover {
+            background: $menu-item-background-hover;
+        }
+    }
+
+    .router-link {
+        padding: 0.1rem 0.25rem;
+
+        .iconfont {
+            margin-right: 0.18rem;
+        }
+    }
+
+    .router-link-active {
+        @extend %router-link-active;
+    }
+}
+
+%router-link-active {
+    position: relative;
+    color: $menu-item-active-color;
+    background: $menu-item-active-bg;
+    // border-radius: 0.08rem;
+    box-shadow: 0.01rem 0.01rem 0.03rem 0.01rem $menu-item-background-hover;
+
+    .iconfont {
+        color: $menu-item-active-color;
+        border-color: $menu-item-active-color;
+    }
+
+    > i,
+    > span {
+        z-index: 1;
+    }
+}

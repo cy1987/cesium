@@ -1,0 +1,55 @@
+<!-- <article class="login-page">
+    <div class="background"></div>
+
+    <div class="content">
+        <section class="title">
+            <div class="logo"></div>
+            <div>
+                <p class="title-name">{{title}}</p>
+                <p class="title-desc">欢迎使用{{title}}</p>
+            </div>
+        </section>
+        <div class="form">
+            <a-input class="diy-input login-input" placeholder="请输入账号" allow-clear v-model.trim="username">
+                <div class="user" slot="prefix"></div>
+            </a-input>
+            <a-input-password class="diy-input login-input" placeholder="请输入密码" allow-clear v-model.trim="password" type="password"
+                @pressEnter="onLogin">
+                <div class="password" slot="prefix"></div>
+
+            </a-input-password>
+            <a-button :loading="logging" class="login-button" @click="onLogin">{{logging?'登录中':'登录'}}<span
+                    v-if="logging">...</span></a-button>
+        </div>
+    </div>
+</article> -->
+
+<div class="login-content" id="disabilityList" :style="bg">
+    <div class="logoNav">
+        <div class="logoNav-left">
+            <div class="icon"></div>
+            <div class="text">{{companyName}}</div>
+        </div>
+        <div class="logoNav-right">
+            <div class="date">{{yearTimeData}}</div>
+            <div class="time">{{TimeData}}</div>
+        </div>
+    </div>
+    <div class="title">{{title}}</div>
+    <div class="inputBox">
+        <div class="inputBoxTitle">欢 迎 登 录</div>
+        <Form ref="formInline" :model="formInline" :rules="ruleInline" @keyup.enter.native="handleSubmit('formInline')">
+            <FormItem prop="username">
+                <Input prefix="ios-contact" type="text" clearable v-model="formInline.username" placeholder="请输入账号"></Input>
+                <!-- <img class="loginUserImg" :src="loginUserImg" alt=""> -->
+            </FormItem>
+            <FormItem prop="password">
+                <Input prefix="ios-lock" type="password" password v-model="formInline.password" placeholder="请输入密码"></Input>
+                <!-- <img class="loginPwdImg" :src="loginPwdImg" alt=""> -->
+            </FormItem>
+            <FormItem>
+                <Button type="primary" @click="handleSubmit('formInline')" :loading="loading">登录</Button>
+            </FormItem>
+        </Form>
+    </div>
+</div>

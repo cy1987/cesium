@@ -1,0 +1,60 @@
+.energyInfo-box1 {
+    position:absolute;
+    top: 115px;
+
+    width: 375px;
+    height: 250px;
+
+    background: #100C2A;
+    background-size: 100%;
+    background-repeat: round;
+    user-select: none;
+    transition: all 0.4s ease;
+    color:#FFFFFF;
+   
+
+    .head{
+        text-align: center;
+        .close {
+        position: absolute;
+        right: .01rem;
+        width: .3rem;
+        height: .3rem;
+        z-index: 5;
+        @include bg-img("~@/assets/images/header/missionPlanning/close.png");
+        cursor: pointer;
+    }
+    }
+    
+
+
+    .flg{
+        color:#FFFFFF;
+        display: flex;
+        justify-content:space-between;
+        padding: .1rem ;
+        border-top:1px dashed   #FFFFFF;
+        border-bottom:1px dashed  #FFFFFF;
+    }
+    .zg{
+        color:#FFFFFF;
+        display: flex;
+        justify-content:space-between;
+        padding: .1rem ;
+        border-bottom:1px dashed  #FFFFFF;
+    }
+    .flg2{
+        color:#FFFFFF;
+        display: flex;
+        justify-content:space-between;
+        padding: .1rem ;
+        border-bottom:1px dashed  #FFFFFF;
+    }
+    .sz{
+        color:#FFFFFF;
+        display: flex;
+        justify-content:space-between;
+        padding: .1rem ;
+        border-bottom:1px dashed  #FFFFFF;
+    }
+}

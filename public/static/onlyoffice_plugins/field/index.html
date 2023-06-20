@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Field</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery.ztree.core.js"></script>
+    <script src="../pluginBase.js"></script>
+    <script src="field.js"></script>
+    <link rel="stylesheet" href="zTreeStyle.css">
+    <link rel="stylesheet" href="../plugins.css">
+    <link rel="stylesheet" href="plugin_style.css">
+</head>
+<body class="body">
+	<div class="input-field">
+		<input type="text" id="input-search" class="input-search" placeholder="输入字段名称进行搜索" autocomplete="off">
+		<button class="button" id="btn_search">搜索</button>
+	</div>
+	<div>
+		<ul id="tree" class="ztree showIcon"></ul>
+	</div>
+    <div id="context-menu" class="context-menu">
+        <div id="context-menu-sum">求和</div>
+        <div id="context-menu-average">求平均数</div>
+        <div id="context-menu-max">最大值</div>
+        <div id="context-menu-min">最小值</div>
+    </div>
+</body>
+</html>

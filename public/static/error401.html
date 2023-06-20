@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>出错啦~401</title>
+
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .error-img {
+                width: 668px;
+                height: 626px;
+                background-image: url("./401.png");
+            }
+            #errorMsg {
+                padding: 0;
+                margin-top: -40px;
+                font-size: 28px;
+                font-family: "PingFangSC", "PingFangSC-Semibold";
+                font-weight: 600;
+                color: #333333;
+                line-height: 40px;
+            }
+            .back-btn {
+                height: 40px;
+                background: transparent;
+                padding: 0 20px;
+                letter-spacing: 10px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <article class="container">
+            <div class="error-img"></div>
+            <p id="errorMsg"></p>
+            <button class="back-btn" onclick="onBack()">返回</button>
+        </article>
+    </body>
+    <script>
+        let params = window.location.href.split("?");
+        params = params.length > 1 ? params[1].split("&") : [];
+        params = params.map(v => v.split("="));
+        const query = Object.fromEntries(params);
+        const { error } = query;
+        document.getElementById("errorMsg").innerText =
+            error || "哎呀，认证失败，暂无访问权限！";
+        function onBack() {
+            window.history.back(-1);
+        }
+    </script>
+</html>

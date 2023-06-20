@@ -1,0 +1,217 @@
+@charset 'UTF-8';
+
+.cofly {
+
+    @include size(100%, 100%);
+    background-color: #282a2f;
+    
+    #map {
+        @include size(100%, 100%);
+    
+        z-index: 1;
+        
+
+    
+    }
+
+    #heatMap {
+        width: 500px;
+        height: 500px;
+        }
+    .card {
+            position: absolute;
+            right: 80px;
+            top: 150px;
+            width: 3.04rem;
+            height: 200px;
+            z-index: 2;
+        
+     }
+ 
+    
+ 
+
+
+    
+
+
+
+    .user-tool {
+        position: absolute;
+        bottom: .1rem;
+
+        .btn {
+            @include size(1rem, .3rem);
+        }
+    }
+
+    .ol-mouse-position {
+        visibility: hidden;
+    }
+
+    .ol-zoom {
+        visibility: hidden;
+    }
+
+    .custom-mouse-position {
+        position: absolute;
+        bottom: .01rem;
+        left: .23rem;
+        z-index: 99;
+        color: #fff;
+    }
+
+    .zoom {
+        @include size(.3rem, .6rem);
+        position: absolute;
+        right: .62rem;
+        bottom: .82rem;
+        background-image: url("../../../../assets/images/map/doubleButton.png");
+        background-size: 100%;
+
+        &-in {
+            @include size(.3rem, .3rem);
+            position: absolute;
+            cursor: pointer;
+
+            &-icon {
+                @include size(.14rem, .14rem);
+                position: absolute;
+                top: .08rem;
+                right: .08rem;
+                background-image: url("../../../../assets/images/map/zoomIn.png");
+                background-size: 100%;
+            } 
+        }
+
+        &-out {
+            @include size(.3rem, .3rem);
+            position: absolute;
+            top: .3rem;
+            cursor: pointer;
+
+            &-icon {
+                @include size(.14rem, .14rem);
+                position: absolute;
+                top: .08rem;
+                right: .08rem;
+                background-image: url("../../../../assets/images/map/zoomOut.png");
+                background-size: 100%;
+            } 
+        }
+    }
+
+    .position {
+        @include size(.3rem, .6rem);
+        position: absolute;
+        right: .62rem;
+        bottom: 1.52rem;
+        background-image: url("../../../../assets/images/map/doubleButton.png");
+        background-size: 100%;
+
+        &-home {
+            @include size(.3rem, .3rem);
+            position: absolute;
+            cursor: pointer;
+
+            &-icon {
+                @include size(.14rem, .14rem);
+                position: absolute;
+                top: .08rem;
+                right: .08rem;
+                background-image: url("../../../../assets/images/map/home.png");
+                background-size: 100%;
+            } 
+        }
+
+        &-center {
+            @include size(.3rem, .3rem);
+            position: absolute;
+            top: .3rem;
+            cursor: pointer;
+
+            &-icon {
+                @include size(.14rem, .14rem);
+                position: absolute;
+                top: .08rem;
+                right: .08rem;
+                background-image: url("../../../../assets/images/map/center.png");
+                background-size: 100%;
+            } 
+        }
+    }
+
+    .mapselect {
+        @include size(.7rem, .3rem);
+        position: absolute;
+        right: .62rem;
+        bottom: .42rem;
+
+        div:nth-child(1) {
+            z-index: 3;
+        }
+
+        .mapButton {
+            @include size(.3rem, .3rem);
+            position: absolute;
+            border-radius: .05rem;
+            cursor: pointer;
+            border: .01rem solid rgb(170, 238, 255);
+            transition: all 0.25s ease;
+            right: 0;
+            @include bg-img("~@/assets/images/map/map.png");
+            background-size: 100%;
+
+            &:hover {
+                box-shadow: rgb(255, 255, 255) 0px 0px 8px;
+            }
+
+            img {
+                @include size(.28rem, .28rem);
+                border-radius: .05rem;
+            }
+
+            transition: all 0.25s ease;
+        }
+
+        .maps {
+            @include size(.88rem, .64rem);
+            position: absolute;
+            cursor: pointer;
+            border: .03rem solid rgb(170, 238, 255);
+            transition: all 0.25s ease;
+            bottom: .02rem;
+
+            .button {
+                @include size(60px, 22px);
+                position: absolute;
+                bottom: .02rem;
+                right: .02rem;
+                @include bg-img("~@/assets/images/map/button.png");
+                background-size: 100%;
+                cursor: pointer;
+                font-size: .12rem;
+                color: #fff;
+                border: none;
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            .selected {
+                @include bg-img("~@/assets/images/map/buttonSelect.png");
+                background-size: 100%;
+            }
+        }
+    }
+
+    .ol-full-screen {
+        visibility: hidden;
+    }
+
+    .ol-scale-line {
+        left: auto;
+        right: 1.2rem;
+        bottom: .4rem;
+    }
+}
+
+

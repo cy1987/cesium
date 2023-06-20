@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@import "./common/mixin";
+@import "./common/_global";
+@import "./common/ant";
+@import "./views/error";
+@import "./icon/iconfont.css";
+
+
+// 第三方css
+@import "~ant-design-vue/dist/antd.css";
+@import "~@egova/flagwind-web/dist/flagwind-web.css";
+
+
+html,
+body,
+#app {
+    overflow: hidden;
+    font-family: "PingFangSC-Semibold", "PingFangSC", "PingFangSC-Regular", "Microsoft YaHei", "Arial";
+    @include size;
+
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+}

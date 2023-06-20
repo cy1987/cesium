@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+.v-layout-wrapper {
+    @include size();
+    @include transition-color();
+    @include flex(column, flex-start, flex-start);
+    position: relative;
+    /*字体颜色*/
+    // color: var(--text-color, unset);
+    /*背景*/
+    background-color: var(--layout-background-color, #f5faff);
+
+    > header {
+        @include size(100%, 0.7rem);
+        background-image: linear-gradient(131deg, #fff 0%, #fff 51%, #f0f8ff 100%, #f0f8ff 100%);
+        border: 1px solid rgba(51, 136, 255, 0.1);
+        box-shadow: 4px 4px 40px 0 rgba(0, 114, 255, 0.1);
+        @include flex(row, flex-start, center);
+
+        .logo {
+            @include size(0.8rem, 100%);
+            @include flex(column, center, center);
+
+            &::after {
+                display: inline-block;
+                text-align: center;
+                content: "";
+                @include size(0.52rem, 0.52rem);
+                @include bg-img("~@/assets/images/icon/logo.png");
+            }
+        }
+
+        .title {
+            margin-left: 0.1rem;
+            font-size: 0.3rem;
+            font-weight: bold;
+            color: #235;
+        }
+
+        .rest {
+            flex: 1;
+            height: 100%;
+            margin-left: 0.7rem;
+            font-size: 0.24rem;
+            font-weight: bold;
+            color: #235;
+            @include flex(row, flex-start, center);
+
+            .app-item {
+                position: relative;
+                display: flex;
+                height: 100%;
+                margin-left: 0.6rem;
+                justify-content: center;
+                align-items: center;
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    display: inline-block;
+                    height: 0;
+                    background-color: #38f;
+                    content: "";
+                }
+            }
+
+            a {
+                color: #235;
+            }
+
+            .active {
+                &::after {
+                    height: 0.04rem;
+                    transition: height 0.2s ease-in-out;
+                }
+
+                a {
+                    color: #38f;
+                }
+            }
+        }
+    }
+
+    > main {
+        position: relative;
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        @include flex(row, flex-start, flex-start);
+
+        > .nav-bar {
+            @include size(0.9rem, 100%);
+            @include flex(column, flex-start, flex-start);
+            background-color: #fafbff;
+
+            .link-container {
+                @include size;
+                flex: 1;
+                overflow: hidden;
+
+                .os-host {
+                    height: 100%;
+                }
+
+                .router-link {
+                    @include size(100%, 0.8rem);
+                    @include flex(column, center, center);
+                    font-size: 0.16rem;
+                    cursor: pointer;
+
+                    .menu-icon {
+                        @include size(0.28rem, 0.28rem);
+                        margin-bottom: 0.1rem;
+                        background-size: 100% 100%;
+                    }
+
+                    &.router-link-active {
+                        color: #38f;
+                        background-color: #eaf3ff;
+                    }
+
+                    &:hover {
+                        background-color: #eaf3ff71;
+                    }
+                }
+            }
+        }
+
+        > .main-content {
+            @include size();
+            flex: 1;
+            overflow: hidden;
+        }
+    }
+}

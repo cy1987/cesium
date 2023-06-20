@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+
+        <% for(var item of htmlWebpackPlugin.options.skins) { %> <link
+        id="<%=item['id']%>" class="skin" href="<%=item['href']%>"
+        rel="stylesheet" type="text/css" title="<%=item['title']%>"
+        <%if(item["disabled"]){%> disabled <%}%> > <% } %>
+
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <script src="static/cesium/heatmap.min.js"></script>
+        <script src="./static/setting.js"></script>
+        <script src="./static/tinymce/tinymce.min.js"></script>
+    </head>
+    <body>
+        <noscript>
+            <strong
+                >We're sorry but identity-authing-web doesn't work properly
+                without JavaScript enabled. Please enable it to
+                continue.</strong
+            >
+        </noscript>
+        <div id="app"></div>
+
+        <!-- built files will be auto injected -->
+    </body>
+</html>

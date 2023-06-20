@@ -1,0 +1,161 @@
+html, body {
+    width: 98%;
+    height: 98%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.context-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    width: 100px;
+    min-height: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 9999;
+    border: 1px solid #dde0e4;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #ccc;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.context-menu div {
+    width: 100%;
+    font-size: 12px;
+    padding: 2px;
+    color: #000000;
+    cursor: pointer;
+    text-align: center;
+}
+
+.context-menu div:hover {
+    background-color: #999999;
+    color: rgba(255, 255, 255, 1);
+}
+
+.button {
+    color: #fff;
+    background-color: #7d858c;
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    outline: none;
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 22px;
+    cursor: pointer;
+}
+
+.input-field {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.input-search {
+    outline-color: #7d858c;
+    flex: 1;
+    height: 18px;
+    border: 1px solid #cfcfcf;
+}
+
+.input-search::selection {
+    background: #D8DADC; /* WebKit/Blink Browsers */
+
+}
+
+.input-search::-moz-selection {
+    background: #D8DADC; /* Gecko Browsers */
+}
+
+.ztree * {
+    font-size: 10pt;
+    font-family: "Microsoft Yahei", Verdana, Simsun, "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", "Segoe UI Symbol", "Helvetica Neue", Arial
+}
+
+.ztree li ul {
+    margin: 0;
+    padding: 0
+}
+
+.ztree li {
+    line-height: 30px;
+}
+
+.ztree li a {
+    width: 200px;
+    height: 30px;
+    padding-top: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ztree li a:hover {
+    text-decoration: none;
+    background-color: #E7E7E7;
+}
+
+.ztree li a span.button.switch {
+    visibility: hidden
+}
+
+.ztree.showIcon li a span.button.switch {
+    visibility: visible
+}
+
+.ztree li a.curSelectedNode {
+    background-color: #D4D4D4;
+    border: 0;
+    height: 30px;
+}
+
+.ztree li span {
+    line-height: 30px;
+}
+
+.ztree li span.button {
+    margin-top: -7px;
+}
+
+.ztree li span.button.switch {
+    width: 16px;
+    height: 16px;
+}
+
+.ztree li a.level0 span {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.ztree li span.button {
+    background-image: url("./left_menuForOutLook.png");
+}
+
+.ztree li span.button.switch.level0 {
+    width: 20px;
+    height: 20px
+}
+
+.ztree li span.button.switch.level1 {
+    width: 20px;
+    height: 20px
+}
+
+.ztree li span.button.noline_open {
+    background-position: 0 0;
+}
+
+.ztree li span.button.noline_close {
+    background-position: -18px 0;
+}
+
+.ztree li span.button.noline_open.level0 {
+    background-position: 0 -18px;
+}
+
+.ztree li span.button.noline_close.level0 {
+    background-position: -18px -18px;
+}
+

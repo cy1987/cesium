@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<header>
+    <nav class="header">
+        <div class="decorate"></div>
+        <div class="left">
+            <div class="time">
+                <span>{{yearTimeData}}</span>
+                <span style="display:inline-block;width: 0.6rem;">{{TimeData}}</span>
+            </div>
+            <div :class="['page', {'selected': page === 'plan'}]" @click="toPlan" v-if="page !== 'visibilityAnalysis'">
+                <span>筹划组织</span>
+            </div>
+            <div :class="['page', {'selected': page === 'design'}]" @click="toDesign" v-if="page !== 'visibilityAnalysis'">
+                <span>态势感知</span>
+            </div>
+            <div class="page disabled" v-if="page !== 'visibilityAnalysis'">
+                <span>调整控制</span>
+            </div>
+        </div>
+        <div class="center">{{ title }}</div>
+        <div class="right">
+            <div class="time" v-if="page === 'design'">
+                作战时间：{{playbackYearTimeData}}
+                <span style="display:inline-block;">{{playbackTimeData}}</span>
+            </div>
+            <div class="icon" v-if="page === 'design'"></div>
+            <div class="mapping-tool-box" v-if="page === 'design'">
+                <Dropdown trigger="click" style="margin-left: -.1rem">
+                    <a href="javascript:void(0)">
+                        测量工具
+                        <Icon type="ios-arrow-down"></Icon>
+                    </a>
+                    <DropdownMenu slot="list">
+                        <DropdownItem>
+                            <span class="spanClick" @click="mesure('LineString')">
+                                <span class="ch1"></span>
+                                测距
+                            </span>
+                        </DropdownItem>
+                        <DropdownItem>
+                            <span  class="spanClick" @click="mesure('Polygon')">
+                                <span class="ch2"></span>
+                                测面
+                            </span>
+                        </DropdownItem>
+                        <DropdownItem>
+                            <span class="spanClick"  @click="mesure('Angle')">
+                                <span class="ch3"></span>
+                                角度
+                            </span>
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+                <Dropdown style="margin-left: -.1rem" :disabled="disabledStatus" trigger="custom" :visible="drawTool">
+                    <!-- <div v-if="viewType === 2" class="tool-tip-6">请先选择阵营</div> -->
+                    <a href="javascript:void(0)" @click="drawTool = !drawTool">
+                        绘制工具
+                        <Icon type="ios-arrow-down"></Icon>
+                    </a>
+                    <DropdownMenu slot="list">
+                        <div class="drawing-tools-box">
+                            <div class="point-mark">
+                                <div class="point-mark-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">点标</span>
+                                </div>
+                                <div class="point-mark-content" @click="activate('Point','area')">
+                                    <DropdownItem><div class="item">点</div></DropdownItem>
+                                </div>
+                            </div>
+                            <div class="line-mark">
+                                <div class="line-mark-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">线标</span>
+                                </div>
+                                <div class="line-mark-content">
+                                    <DropdownItem><div @click="activate('Polyline','mark')">折线</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Curve','mark')">曲线</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Arc','mark')">弓形</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('FreeHandLine','mark')">自由线</div></DropdownItem>
+                                </div>
+                            </div>
+                            <div class="face-mark">
+                                <div class="face-mark-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">面标</span>
+                                </div>
+                                <div class="face-mark-content">
+                                    <DropdownItem><div @click="activate('Circle','area')">圆</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Ellipse','area')">椭圆</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Lune','area')">弓形</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Sector','area')">扇形</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('Polygon','area')">多边形</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('RectAngle','area')">矩形</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('ClosedCurve','area')">闭合曲面</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('FreePolygon','area')">自由面</div></DropdownItem>
+                                </div>
+                            </div>
+                        </div>
+                    </DropdownMenu>
+                </Dropdown>
+                <Dropdown trigger="click" :disabled="disabledStatus" style="margin-left: -.1rem">
+                    <!-- <div v-if="viewType === 2" class="tool-tip-7">请先选择阵营</div> -->
+                    <a href="javascript:void(0)">
+                        军事标图
+                        <Icon type="ios-arrow-down"></Icon>
+                    </a>
+                    <DropdownMenu slot="list">
+                        <div class="plotting-box">
+                            <div class="face-mark">
+                                <div class="face-mark-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">面标</span>
+                                </div>
+                                <div class="face-mark-content">
+                                    <DropdownItem><div @click="activate('GatheringPlace','area')">集结地</div></DropdownItem>
+                                </div>
+                            </div>
+                            <div class="arrow">
+                                <div class="arrow-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">箭头</span>
+                                </div>
+                                <div class="arrow-content">
+                                    <DropdownItem><div @click="activate('DoubleArrow','area')">钳击</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('AssaultDirection','area')">直箭头</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('FineArrow','area')">尖箭头</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('StraightArrow','area')">细直箭头</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('AttackArrow','area')">突击方向</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('TailedAttackArrow','area')">突击方向(尾)</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('SquadCombat','area')">分队行动</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('TailedSquadCombat','area')">分队行动(尾)</div></DropdownItem> 
+                                </div>
+                            </div>
+                            <div class="flag">
+                                <div class="flag-titel">
+                                    <span class="icon"></span>
+                                    <span class="text">旗帜</span>
+                                </div>
+                                <div class="flag-content">
+                                    <DropdownItem><div @click="activate('RectFlag','area')">矩形旗</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('TriangleFlag','area')">三角旗</div></DropdownItem>
+                                    <DropdownItem><div @click="activate('CurveFlag','area')">曲线旗</div></DropdownItem>
+                                </div>
+                            </div>
+                        </div>
+                    </DropdownMenu>
+                </Dropdown>
+            </div>
+            <div class="icon user-icon"></div>
+            <div class="user" @click="signOut" ref="selectBox"></div>
+        </div>
+    </nav>
+    <div class="signOut-box" id="signOutBox">
+        <div class="signOut-text" id="signOutText" @click="signOutConfirmBox"></div>
+    </div>
+    <div class="signOutConfirm-box" v-if="signOutConfirmStatus">
+        <div class="signOutConfirm-text-box">
+            <div class="signOutConfirm-text">退出确认</div>
+            <div class="signOutConfirm-close" @click="close"></div>
+        </div>
+        <div class="signOutConfirm-paragraph-box">
+            <div class="signOutConfirm-paragraph-icon"></div>
+            <div class="signOutConfirm-paragraph">确认退出软件？</div>
+        </div>
+        <div class="signOutConfirm-Confirm-box">
+            <div class="cancel" @click="close">取 消</div>
+            <div class="confirm" @click="confirm">确 认</div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,1023 @@
+.control {
+    @include size;
+    user-select: none;
+
+    #case-map {
+        @include size(100%, 95.9%);
+    }
+
+    .header {
+        user-select: none;
+        display: flex;
+        width: 100%;
+        height: 40px;
+        overflow: hidden;
+        background: url("../../../../assets/images/header/headerBackground.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: 3;
+
+        .left {
+            z-index: 99;
+            display: flex;
+            width: 7.04rem;
+            height: .34rem;
+            margin: .19rem 0 0 .04rem;
+           
+
+           
+            .name {
+                width: 4rem;
+                height: .33rem;
+                margin-left: .1rem;
+                color: #edf7fa;
+                
+            }
+        }
+
+        .center {
+            width: 6.03rem;
+            height: .100rem;
+            margin: .1rem 0;
+            text-align: center;
+            font-family: REEJI-HonghuangLiGB-SemiBold;
+            font-size: .24rem;
+            line-height: .35rem;
+            letter-spacing: .03rem;
+            color: #edf7fa;
+            z-index: 3;
+            text-shadow: 0 0 .07rem #001c2d;
+
+            display: flex;
+            
+
+
+            .zhjt {
+                width: 1.03rem;
+                height: .35rem;
+                margin: .1rem 0;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .20rem;
+                line-height: .35rem;
+                letter-spacing: .03rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+
+            .zhny {
+                width: 1.03rem;
+                height: .35rem;
+                margin: .1rem 0;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .20rem;
+                line-height: .35rem;
+                letter-spacing: .03rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+            .zhsq {
+                width: 1.03rem;
+                height: .35rem;
+                margin: .1rem 0;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .20rem;
+                line-height: .35rem;
+                letter-spacing: .03rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+            .zhyy {
+                width: 1.03rem;
+                height: .35rem;
+                margin: .1rem 0;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .20rem;
+                line-height: .35rem;
+                letter-spacing: .03rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+            .zhss {
+                width: 1.03rem;
+                height: .35rem;
+                margin: .1rem 0;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .20rem;
+                line-height: .35rem;
+                letter-spacing: .03rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+            
+        }
+        .right {
+            display: flex;
+            width: 7.04rem;
+            height: .33rem;
+            margin: .19rem 0;
+            background: url("../../../../assets/images/header/headerLeft.png");
+            background-size: 100%;
+
+            [disabled=disabled] {
+                cursor: not-allowed !important;
+                .tool-tip-6,.tool-tip-7 {
+                    
+                    position: absolute;
+                    top: .1rem;
+                    right: .1rem;
+                    width: .9rem;
+                    height: .29rem;
+                    text-align: center;
+                    line-height: .2rem;
+                    font-size: .12rem;
+                    line-height: .29rem;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #fff;
+                    background: url("../../../../assets/images/header/layer/toolTip.png");
+                    background-size: 100%;
+                    background-repeat: round;
+                    text-shadow: 0 0 .04rem rgba(255, 255, 255, 0.8);
+                    display: none;
+                }
+                &:hover .tool-tip-6 {
+                    display: block;
+                }
+                &:hover .tool-tip-7 {
+                    display: block;
+                    right: -.05rem;
+                }
+                a {
+                    // background-image: url("~@/assets/images/header/select-disable.png") !important;
+                    opacity: 0.5;
+                    cursor: not-allowed !important;
+                }
+                .ivu-select-dropdown {
+                    display: none;
+                }
+            }
+        }
+        .right1 {
+            display: flex;
+            width: 7.04rem;
+            height: .33rem;
+            margin: .19rem 0 0 0;
+            background: url("../../../../assets/images/header/headerLeft.png");
+            background-size: 100%;
+
+            .mapping-tool-box {
+                width: 3.06rem;
+                height: .22rem;
+                margin: .06rem 0 0 .32rem;
+                // display: flex;
+
+                a {
+                    display: block;
+                    width: .96rem;
+                    height: .22rem;
+                    margin: 0 0 0 .13rem;
+                    color: #fff;
+                    text-align: center;
+                    background: url("../../../../assets/images/header/tool.png");
+                    background-size: 100%;
+                }
+                
+                .ivu-dropdown:nth-child(1) {
+                    .ivu-select-dropdown {
+                        width: 1.39rem;
+                        height: 1.18rem;
+                        text-align: center;
+                        background: url("../../../../assets/images/header/mapping_select_box.png");
+                        background-size: 100%;
+    
+                        .ivu-dropdown-item {
+                            color: #fff;
+                        }
+    
+                        .ivu-dropdown-item:hover {
+                            padding: 0;
+                            margin: .07rem .16rem;
+                            background: url("../../../../assets/images/header/mapping-check-box.png");
+                            background-repeat: no-repeat;
+                            background-size: 100%;
+                        }
+    
+                    }
+
+                    .ch1 {
+                        display: inline-block;
+                        width: .15rem;
+                        height: .15rem;
+                        margin-top: .01rem;
+                        vertical-align: -14%;
+                        background: url("../../../../assets/images/header/mapping_select_distance.png");
+                        background-size: 100%;
+                    }
+    
+                    .ch2 {
+                        display: inline-block;
+                        width: .15rem;
+                        height: .15rem;
+                        margin-top: .01rem;
+                        vertical-align: -14%;
+                        background: url("../../../../assets/images/header/mapping_select_coordinate.png");
+                        background-size: 100%;
+                    }
+    
+                    .ch3 {
+                        display: inline-block;
+                        width: .15rem;
+                        height: .15rem;
+                        margin-top: .01rem;
+                        vertical-align: -14%;
+                        background: url("../../../../assets/images/header/mapping_select_coordinate.png");
+                        background-size: 100%;
+                    }
+                }
+ 
+                .ivu-dropdown:nth-child(2) {
+                    .ivu-dropdown-item {
+                        padding: 0;
+                        width: .71rem;
+                        height: .26rem;
+                    }
+                    
+                    .ivu-dropdown-item:hover {
+                        background: none;
+                    }
+
+                    .ivu-select-dropdown {
+                        // display: none;
+                        width: 3.51rem;
+                        height: 3.47rem;
+                        padding: .06rem .06rem .06rem .07rem;
+                        text-align: center;
+                        background: url("../../../../assets/images/header/plotting_select_box.png");
+                        background-size: 100%;
+
+                        .plotting-box {
+                            width: 3.39rem;
+                            height: 5.46rem;
+
+                            .face-mark {
+                                width: 3.39rem;
+                                height: .88rem;
+
+                                .face-mark-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/m.png");
+                                        background-repeat: no-repeat;
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: 100%;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .face-mark-content {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: 1.6rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-bottom: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-repeat: no-repeat;
+                                        background-size: 100%;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            .arrow {
+                                width: 3.39rem;
+                                height: 1.6rem;
+
+                                .arrow-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/j.png");
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: 100%;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .arrow-content {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: 1.24rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-bottom: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .11rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                            }
+
+                            .flag {
+                                width: 3.39rem;
+                                height: .86rem;
+
+                                .flag-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/flag.png");
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: 100%;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .flag-content {
+                                    display: flex;
+                                    // justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: 1.24rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-right: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .11rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        cursor: pointer;
+                                    }
+
+                                    .ivu-dropdown-item {
+                                        margin-right: .1rem;
+                                    }
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+
+                .ivu-dropdown:nth-child(3) {
+                    .ivu-dropdown-item {
+                        padding: 0;
+                        width: .71rem;
+                        height: .26rem;
+                    }
+                    
+                    .ivu-dropdown-item:hover {
+                        background: none;
+                    }
+
+                    .ivu-select-dropdown {
+                        width: 3.51rem;
+                        height: 3.11rem;
+                        text-align: center;
+                        background: url("../../../../assets/images/header/region_select_box.png");
+                        background-image: 100%;
+                        background-repeat: no-repeat;
+
+                        .drawing-tools-box {
+                            width: 3.39rem;
+                            height: 3.34rem;
+
+                            .point-mark {
+                                width: 3.39rem;
+                                height: .88rem;
+
+                                .point-mark-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/d.png");
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: .24rem;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .point-mark-content {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: 1.6rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-bottom: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            .line-mark {
+                                width: 3.39rem;
+                                height: .88rem;
+
+                                .line-mark-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/x.png");
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: .24rem;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .line-mark-content {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: 1.24rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-bottom: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .11rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            .face-mark {
+                                width: 3.39rem;
+                                height: .88rem;
+
+                                .face-mark-titel {
+                                    width: 3.39rem;
+                                    height: .22rem;
+                                    padding-left: .13rem;
+                                    text-align: left;
+                                    background: linear-gradient(270deg, rgba(3, 72, 95, 0.3) 0%, #096b85 50%, rgba(3, 72, 95, 0.3) 100%);
+
+                                    .icon {
+                                        display: inline-block;
+                                        width: .15rem;
+                                        height: .15rem;
+                                        vertical-align: -14%;
+                                        background: url("../../../../assets/images/header/m.png");
+                                        background-repeat: no-repeat;
+                                        background-size: 100%;
+                                    }
+
+                                    .text {
+                                        width: 100%;
+                                        height: .17rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .17rem;
+                                        color: #00cdff;
+                                    }
+                                }
+
+                                .face-mark-content {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+                                    width: 3.39rem;
+                                    height: .88rem;
+                                    padding: .1rem .13rem;
+
+                                    div {
+                                        width: .71rem;
+                                        height: .26rem;
+                                        margin-bottom: .1rem;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-size: .12rem;
+                                        font-weight: 500;
+                                        line-height: .26rem;
+                                        color: #fff;
+                                        text-shadow: 0 0 .04rem rgba(0, 198, 255, 0.8);
+                                        background: url("../../../../assets/images/header/plotting.png");
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+    
+                    }
+                }                
+            }
+
+            .play-tool-box {
+                display: flex;
+                width: 3.58rem;
+                height: .23rem;
+                margin: .05rem 0 0 .08rem;
+
+                li {
+                    width: .42rem;
+                    height: .22rem;
+                    padding: 0;
+                    margin-right: .08rem;
+                    list-style: none;
+                    cursor: pointer;
+                }
+
+                li:nth-child(1) {
+                    background: url("../../../../assets/images/header/Previous.png");
+                    background-size: 100%;
+                }
+
+                li:nth-child(1):hover ~.tool-tip-1 {
+                    display: block;
+                }
+
+                li:nth-child(2) {
+                    background: url("../../../../assets/images/header/next.png");
+                    background-size: 100%;
+                }
+
+                li:nth-child(2):hover ~.tool-tip-2 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 2.68rem;
+                    display: block;
+                }
+
+                li:nth-child(3) {
+                    background: url("../../../../assets/images/header/copy.png");
+                    background-size: 100%;
+                }
+                                
+                li:nth-child(3):hover ~.tool-tip-3 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 2.18rem;
+                    display: block;
+                }
+
+                li:nth-child(3):hover ~.tool-tip-3 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 2.18rem;
+                    display: block;
+                }
+
+                li:nth-child(4) {
+                    background: url("../../../../assets/images/header/edit.png");
+                    background-size: 100%;
+                }
+                                
+                li:nth-child(4):hover ~.tool-tip-4 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 1.68rem;
+                    display: block;
+                }
+
+                li:nth-child(4):hover ~.tool-tip-4 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 1.68rem;
+                    display: block;
+                }
+
+                li:nth-child(5) {
+                    background: url("../../../../assets/images/header/preservation.png");
+                    background-size: 100%;
+                }
+                                                
+                li:nth-child(5):hover ~.tool-tip-5 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 1.18rem;
+                    display: block;
+                }
+
+                li:nth-child(5):hover ~.tool-tip-5 {
+                    position: absolute;
+                    top: .52rem;
+                    right: 1.18rem;
+                    display: block;
+                }
+
+                li:nth-child(6) {
+                    background: url("../../../../assets/images/header/delete.png");
+                    background-size: 100%;
+                }
+                                                
+                li:nth-child(6):hover ~.tool-tip-6 {
+                    position: absolute;
+                    top: .52rem;
+                    right: .68rem;
+                    display: block;
+                }
+
+                li:nth-child(6):hover ~.tool-tip-6 {
+                    position: absolute;
+                    top: .52rem;
+                    right: .68rem;
+                    display: block;
+                }
+
+                li:nth-child(7) {
+                    width: .01rem;
+                    background-color: #346d8c;
+                }
+
+                li:nth-child(8) {
+                    background: url("../../../../assets/images/header/portrait.png");
+                    background-size: 100%;
+                }
+            }
+
+            .tool-tip-1,.tool-tip-2,.tool-tip-3,.tool-tip-4,.tool-tip-5,.tool-tip-6 {
+                z-index: 12;
+                position: absolute;
+                top: .52rem;
+                right: 3.18rem;
+                width: .61rem;
+                height: .29rem;
+                text-align: center;
+                line-height: .2rem;
+                font-size: .12rem;
+                line-height: .29rem;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #fff;
+                background: url("../../../../assets/images/header/layer/toolTip.png");
+                text-shadow: 0 0 .04rem rgba(255, 255, 255, 0.8);
+                display: none;
+            }
+        }   
+    }
+    .card {
+        visibility: hidden;
+        position: absolute;
+        right: 80px;
+        top: 150px;
+        width: 3.04rem;
+        height: 200px;
+        z-index: 2;
+    
+ }
+
+
+
+    .menu-btnTip {
+      transition: all 0.25s ease;
+      position: absolute;
+      top: 64px;
+      z-index: 11;
+      .menu-btn {
+        
+        svg {
+          width: 30px;
+          height: 30px;
+          background: rgba(43,59,64,0.6);
+          border-color: #4B5B72;
+          border-width: 2px;
+          border-style: solid;
+          border-radius: 50%;
+          cursor: pointer;
+  
+          &:hover {
+            background: rgba(77,89,109,0.6);
+            border-color: #4B5B72;
+            box-shadow: 0 0 5px #4B5B72 inset;
+            stroke: #4B5B72;
+          }
+        }
+        .btn {
+            width: 1rem;
+            height: .33rem;
+            line-height: .33rem;
+            color: #fff;
+            text-align: center;
+            background: url("../../../../assets/images/header/project/txy.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .btn:hover {
+            background: url("../../../../assets/images/header/project/txy-hover.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .btn:active {
+            background: url("../../../../assets/images/header/project/txy-active.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        &-icon {
+          transform: translate(.03rem,.03rem);
+        }
+  
+        &-iconright {
+          transform: translate(.19rem,.08rem) rotateY(180deg);
+        }
+  
+        &-iconleft {
+          transform: translate(.07rem,.08rem);
+        }
+      }
+    }
+    .center-right {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        z-index: 99;
+        width: 46px;
+        height: calc(100% - 40px);
+        background: url("../../../../assets/images/header/rightSelectionBox.png");
+        background-size: 100%;
+        transition: all 0.25s ease;
+        
+        .right-toggle-selection-box {
+            padding: 0;
+            margin: 180px 0 0;
+            list-style: none;
+
+            .jtzk{
+                width: 30px;
+                height: 60px;
+                margin: .1rem;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .03rem;
+                line-height: .2rem;
+                letter-spacing: .01rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+                cursor: pointer;
+            }
+
+            .nygy{
+                
+                width: 30px;
+                height: 60px;
+                margin: .1rem;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .03rem;
+                line-height: .2rem;
+                letter-spacing: .01rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+            
+
+            
+
+            .jmjk{
+               
+               
+                width: 30px;
+                height: 60px;
+                margin: .1rem;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .03rem;
+                line-height: .2rem;
+                letter-spacing: .01rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+            .sqaq{
+               
+                
+                width: 30px;
+                height: 60px;
+                margin: .1rem;
+                text-align: center;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                font-size: .03rem;
+                line-height: .2rem;
+                letter-spacing: .01rem;
+                color: #edf7fa;
+                z-index: 3;
+                text-shadow: 0 0 .07rem #001c2d;
+            }
+
+
+
+
+
+        }
+
+        li {
+            width: 31px;
+            height: 180px;
+            margin-top: -19px;
+            background: url("../../../../assets/images/header/rightToggleSelection.png");
+            background-repeat: no-repeat;
+            // background-size: 100%;
+            cursor: pointer;
+
+            .toggle-selection-box-text {
+                width: .34rem;
+                height: 80px;
+                font-family: REEJI-HonghuangLiGB-SemiBold;
+                letter-spacing: .01rem;
+                font-size: 12px;
+                font-weight: 500;
+                color: #edf7fa;
+                text-shadow: 0 0 .07rem #001c2d;
+                
+                
+            }
+
+            .s1 {
+                position: absolute;
+                top: 160px;
+                left: 0px;
+                
+            }
+
+            .s2 {
+                position: absolute;
+                top: 270px;
+                left: 0px;
+            }
+
+            .s3 {
+                position: absolute;
+                top: 387px;
+                left: 10px;
+            }
+        }
+
+
+
+        .selected {
+            background: url("../../../../assets/images/header/rightToggleSelection_selected.png");
+            background-repeat: no-repeat;
+            // background-size: 100%;
+        }
+
+        li:first-of-type {
+            margin-top: -60px;
+        }
+
+        li:last-of-type {
+            background: url("../../../../assets/images/header/rightToggleSelectionEnd.png");
+            background-repeat: no-repeat;
+            // background-size: 100%;
+        }
+        
+        .lastSelected {
+            background: url("../../../../assets/images/header/rightToggleSelectionEnd_selected.png") !important;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+    }
+}

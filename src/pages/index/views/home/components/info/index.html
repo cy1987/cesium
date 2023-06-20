@@ -1,0 +1,21 @@
+<div class="info-box" > <!-- ts文件中show变量更新控制样式 -->
+    <div class="info-title">
+        模型信息
+        <span class="close" @click="close">×</span>
+    </div>
+    <div class="info-content">
+        
+        <div style="width:340px;height:50px;position:absolute;top:50px;left:20px;z-index:1;font-size:15px;">{{model.name}}</div>
+
+        <div id="latlng_show" style="width:340px;height:100px;position:absolute;top:100px;left:20px;z-index:1;font-size:15px;">  
+            <div style="width:100px;height:30px;float:left;">  
+                 <el-button class="operation-button-select" @click="setview">获取当前视角</el-button>
+            </div>  
+            <div style="width:100px;height:30px;float:left;">  
+                <el-button class="operation-button-select" @click="backview">返回视角</el-button>
+           </div>  
+        </div> 
+
+                     
+    </div>
+</div>

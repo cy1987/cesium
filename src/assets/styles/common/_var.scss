@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+/* --------------------------------------------
+1、字体大小
+---------------------------------------------*/
+$font-size-g: 0.12rem;
+/* --------------------------------------------
+2、基本颜色
+---------------------------------------------*/
+$color-white-g: #fff;
+$color-blue-g: #4682b4;
+$color-red-g: #b22222;
+$color-orange-g: #ff8c00;
+$color-green-g: #3cb371;
+$color-gray-g: #808080;
+/* --------------------------------------------
+3、字体颜色
+---------------------------------------------*/
+$font-color-g: var(--text-color, #000);
+$font-color-white-g: $color-white-g;
+$font-color-gray-g: darken($color-gray-g, 10%);
+$font-color-blue-g: #4abdf4;
+/* --------------------------------------------
+4、背景颜色
+---------------------------------------------*/
+
+/**
+参考：https://app.mockplus.cn/app/deUaz7uNVi_/specs/design/S6p4_4j_CCH_
+ */
+
+// 主色采用科技蓝，更贴合数字与政府，给人明朗而积极的感觉，更加沉稳、干练、可靠、科技感也更像。
+$--color-primary: #38f !default;
+$--color-primary-c1: #f5f9ff !default;
+$--color-primary-c2: #eaf3ff !default;
+$--color-primary-c3: #99c3ff !default;
+
+// 中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构
+$--color-neutral: #235 !default;
+$--color-font: $--color-neutral !default;
+
+// 辅助色用于除主色外的场景，常用来表示事情的紧急和危险程度。
+$--color-success: #11c79b !default;
+$--color-danger: #f61 !default;
+$--color-warning: #f90 !default;
+// $--color-warning: #aa8dff !default;

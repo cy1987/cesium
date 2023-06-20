@@ -1,0 +1,46 @@
+<div class="energy-box" :style="show ? 'right: 35%' : 'right: -10rem'"> <!-- ts文件中show变量更新控制样式 -->
+    <div class="energy-title">
+        能源供应情况查询
+        <span class="close" @click="close">x</span>
+    </div>
+    <div class="energy-content">
+        <div class="select1">
+             <p>能源供应类型：</p>
+        <a-select default-value = "cold"    @change="(value,option) => handleChange(value,'gylx')" >
+            
+            <a-select-option :value="item.value" 
+                            :disabled="item.disabled"
+                            v-for="item in options"
+                            :key="item.value"
+                           >
+            {{item.label}}
+            </a-select-option>
+        </a-select>
+
+        </div>
+        <div class="select2">
+            <p>能源供应单位：</p>
+       <a-select default-value = "zjjd"   @change="(value) => handleChange(value,'gydw')" style="width: 100px">
+           
+           <a-select-option :value="item.value"
+                           :disabled="item.disabled"
+                           v-for="item in options1"
+                           :key="item.value">
+           {{item.label}}
+           </a-select-option>
+       </a-select>
+
+       </div>
+
+       <p>能源供应时间：</p>
+     
+       <!--修改成为月份-->
+       <a-month-picker placeholder="Select mouth" v-model:value="date" value-format="YYYY-MM" />
+
+        
+        <a-button class="diy-btn" @click="search">查询</a-button> <!-- ant组件有些写了预设样式，class里把标签中的a改成diy就可以使用，如a-table class就写成diy-class，按钮是特例，为diy-btn
+                                                                    但是因为ant组件版本问题，可能有些样式有点问题 -->
+
+        <p>{{searchres}}KWh</p>
+    </div>
+</div>

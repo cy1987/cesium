@@ -1,0 +1,56 @@
+{
+  "_from": "cesium-navigation-es6",
+  "_id": "cesium-navigation-es6@1.1.7",
+  "_inBundle": false,
+  "_integrity": "sha512-HLVbWpm2kUU0Lpch9qdVhmzQ7BX1Q/+iZ5ujtmgyRoA3DjYwHR7Q/uu9PdeWvdZVBfBsVPySSfu9gOrhdW1USA==",
+  "_location": "/cesium-navigation-es6",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cesium-navigation-es6",
+    "name": "cesium-navigation-es6",
+    "escapedName": "cesium-navigation-es6",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cesium-navigation-es6/-/cesium-navigation-es6-1.1.7.tgz",
+  "_shasum": "dd39b499b7d0a33a05186c7e49ca6039f0c3199e",
+  "_spec": "cesium-navigation-es6",
+  "_where": "F:\\prjs\\cesium\\cesiumEffects\\fregata-cesium-web",
+  "author": {
+    "name": "richard"
+  },
+  "bugs": {
+    "url": "https://github.com/richard1015/cesium-navigation-es6/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "cesium": "^1.72.0",
+    "hammerjs": "^2.0.8",
+    "markdown-it": "^8.4.2",
+    "markdown-it-sanitizer": "^0.4.3"
+  },
+  "deprecated": false,
+  "description": "cesium-navigation-es6",
+  "homepage": "https://github.com/richard1015/cesium-navigation-es6#readme",
+  "keywords": [
+    "cesium-navigation"
+  ],
+  "license": "ISC",
+  "main": "viewerCesiumNavigationMixin.js",
+  "name": "cesium-navigation-es6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richard1015/cesium-navigation-es6.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.7"
+}

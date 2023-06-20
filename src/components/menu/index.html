@@ -1,0 +1,68 @@
+<!-- TODO: 菜单抽出到组件库 -->
+<nav class="u-menu" :class="{'collapsed': collapsed}">
+    <div class="menu-collaps-btn">
+        <span class="iconfont icon-menu" @click="onToggleClick"></span>
+    </div>
+    <section class="menu-section">
+        <overlay-scrollbars :options="options">
+            <template v-for="(menu, index) in menus">
+                <!-- 含有二级菜单 -->
+                <div
+                    v-if="menu.children"
+                    class="menu-group"
+                    :class="{'opened': menu.open, 'active': getGroupStatus(menu)}"
+                >
+                    <!-- 展开的菜单 -->
+                    <template v-if="!collapsed">
+                        <div class="menu-group-title router-link" @click="menu.open = !menu.open">
+                            <span class="iconfont" :class="menu.icon"></span>
+                            <span class="menu-group-title-name">{{menu.name}}</span>
+                            <a-icon type="down" />
+                        </div>
+                        <div
+                            class="menu-item-container"
+                            :style="menu.open ? 'height: calc(' + 0.6 * menu.children.length + 'rem' + ' + ' + 1*menu.children.length + 'px);' : 'height:0rem'"
+                        >
+                            <template v-for="c in menu.children">
+                                <div class="menu-item">
+                                    <router-link :to="{name: c.routeName}" class="router-link" tag="div">
+                                        <span class="iconfont circle"></span>
+                                        <span class="diy-h1">{{c.name}}</span>
+                                    </router-link>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+                    <!-- 收缩后的菜单 -->
+                    <template v-else>
+                        <a-dropdown
+                            placement="right-start"
+                            transfer
+                            transfer-class-name="ivu-dropdown-menu-diy"
+                            trigger="hover"
+                        >
+                            <span class="iconfont router-link" :class="menu.icon" :title="menu.name"></span>
+                            <a-menu slot="overlay">
+                                <template v-for="c in menu.children">
+                                    <a-menu-item>
+                                        <router-link :to="{name: c.routeName}" class="router-link" tag="div">
+                                            {{c.name}}
+                                        </router-link>
+                                    </a-menu-item>
+                                </template>
+                            </a-menu>
+                        </a-dropdown>
+                    </template>
+                </div>
+                <!-- 仅含一级菜单 -->
+                <div v-else class="menu-item">
+                    <router-link :to="{name: menu.routeName}" class="router-link" tag="div">
+                        <span class="iconfont" :class="menu.icon" :title="collapsed ? menu.name:''"></span>
+                        <span v-if="!collapsed">{{menu.name}}</span>
+                        <span v-if="!menu.icon && collapsed">{{menu.name && menu.name.length && menu.name[0]}}</span>
+                    </router-link>
+                </div>
+            </template>
+        </overlay-scrollbars>
+    </section>
+</nav>

@@ -1,0 +1,62 @@
+<div class="u-category-tree">
+    <!-- header -->
+    <header class="category-tree-header">
+        <slot name="header"> <span class="title">{{title}}</span>
+        </slot>
+    </header>
+    <!-- search -->
+    <section v-if="searchOption?.show" class="search">
+        <a-input tabindex="0" class="diy-input"
+            :placeholder="searchOption?.placeholder"
+            @change="onChange">
+            <template slot="prefix">
+                <a-icon type="search" />
+            </template>
+        </a-input>
+    </section>
+
+    <section class="tree-wrapper">
+        <a-tree class="diy-tree" :selected-keys="selectedKeys"
+            :treeData="treeData" :expanded-keys="expandedKeys"
+            :replaceFields="replaceFields"
+            :auto-expand-parent="autoExpandParent" @select="onSelect"
+            @expand="onExpand">
+            <template slot="title"
+                slot-scope="{ name, dataRef, loaded, checked, selected, expanded}">
+                <div class="tree-title-wrapper">
+                    <i v-if="dataRef.isApp"
+                        :class="['iconfont',topIcon]"></i>
+                    <i v-else :class="['iconfont',otherIcon]"></i>
+                    <span class="title"
+                        v-if="name.indexOf(searchValue) > -1">
+                        {{ name.substr(0, name.indexOf(searchValue))
+                        }}
+                        <span style="color: #f50">{{ searchValue
+                            }}</span>
+                        {{ name.substr(name.indexOf(searchValue) +
+                        searchValue.length) }}
+                    </span>
+                    <span class="title" v-else> {{ name }}</span>
+
+                    <a-dropdown
+                        overlay-class-name="u-category-tree-dropdown-menus"
+                        placement="bottomRight">
+                        <a-icon type="ellipsis" />
+                        <a-menu slot="overlay"
+                            @click="onClickMenu($event, dataRef)">
+                            <a-menu-item
+                                v-for="item in getMenus(dataRef.isApp)"
+                                :key="item.value">
+                                <span :style="{color: item.color}">{{
+                                    item.text }}</span>
+                            </a-menu-item>
+                        </a-menu>
+                    </a-dropdown>
+                </div>
+            </template>
+        </a-tree>
+    </section>
+
+    <add-category-modal v-model="showCategoryModal" :data="category"
+        @on-saved="loadData"></add-category-modal>
+</div>

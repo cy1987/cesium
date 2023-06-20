@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.u-image-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.6rem;
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .empty-message {
+        @include size;
+        @include flex(row, center, center);
+        color: rgb(167, 167, 167);
+    }
+
+    img {
+        display: none;
+
+        &:nth-child(1) {
+            display: block;
+        }
+    }
+}
+
+.viewer-container {
+    z-index: 3000 !important;
+}

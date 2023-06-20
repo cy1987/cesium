@@ -1,0 +1,40 @@
+<div class="u-common-tree">
+    <!-- search -->
+    <section v-if="searchOption?.show" class="search">
+        <a-input
+            v-model="keyword"
+            tabindex="0"
+            class="diy-input"
+            :placeholder="searchOption?.placeholder"
+            @change="onFilter"
+        >
+            <template slot="prefix">
+                <a-icon type="search" />
+            </template>
+        </a-input>
+    </section>
+
+    <section class="tree-wrapper">
+        <a-tree
+            class="diy-tree"
+            :treeData="treeData"
+            :replaceFields="replaceFields"
+            :defaultSelectedKeys="defaultSelectedKeys"
+            :expandedKeys.sync="expandedKeys"
+            @select="onSelect"
+        >
+            <template slot="title" slot-scope="{ name,text, dataRef, loaded, checked, selected, expanded}">
+                <div class="tree-title-wrapper">
+                    <template v-if="dataRef.isLeaf">
+                        <i :class="['iconfont',otherIcon]"></i>
+                        <span class="title">{{ text||name }}</span>
+                    </template>
+                    <template v-else>
+                        <i :class="['iconfont',topIcon]"></i>
+                        <span class="title">{{ name }}</span>
+                    </template>
+                </div>
+            </template>
+        </a-tree>
+    </section>
+</div>

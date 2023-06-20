@@ -1,0 +1,28 @@
+<div class="energyInfo-box" :style="show ? 'right: 72%' : 'right: -20rem'"> <!-- ts文件中show变量更新控制样式 -->
+    <div class = "head">
+       <div class="close" @click="close"></div>
+        <p>能耗数据</p> 
+    </div>
+    
+    <div class = "fdl">
+        <p style="width :150px;">内燃机发电量</p>
+        <p>84288.3</p>
+        <p>MWh </p>
+    </div>
+
+    <div class = "fdsj">
+        <p style="width :150px;"> 内燃机发电时间</p>
+        <p>20132</p>
+        <p style="width :35px;">小时 </p>
+    </div> 
+    <div class = "coldrllj">
+        <p style="width :150px;"> 洲际酒店冷水热量累计</p>
+        <p>4526861</p>
+        <p>KWh </p>
+    </div>
+    <div class = "warmrllj">
+        <p style="width :150px;"> 洲际酒店热水热量累计</p>
+        <p>6806000</p>
+        <p>KWh </p>
+    </div>
+</div>
